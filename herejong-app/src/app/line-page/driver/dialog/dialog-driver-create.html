@@ -1,0 +1,68 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div mat-dialog-title class="mat-dialog-title">
+
+    <b><span class="driver-text">เพิ่มคนขับรถ</span></b>
+
+</div>
+
+
+<div class="dialog-create">
+
+    <form [formGroup]="createDriverForm" (ngSubmit)="onSubmit()">
+
+        <mat-dialog-content class="mat-typography">
+            <div class="row row-data">
+
+
+                <div class="col-md-12 mt-2 mb-4 text-center ">
+                    <i class="fa fa-user-circle fa-iamge" aria-hidden="true"></i>
+                    <i class="fa fa-camera fa-iamge-upload" aria-hidden="true"></i>
+                </div>
+
+
+
+                <div class="col-md-12">
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>ชื่อ - สกุล</mat-label>
+                        <input matInput formControlName="fullname" placeholder="" autocomplete="off" [errorStateMatcher]="matcher">
+
+                        <mat-error *ngIf="createDriverForm.get('fullname').hasError('required')">
+                            กรุณากรอกชื่อ - สกุล
+                        </mat-error>
+
+                    </mat-form-field>
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>เลขทะเบียน จป วิชาชีพ (ถ้ามี)</mat-label>
+                        <input matInput formControlName="driverCert" placeholder="" autocomplete="off" [errorStateMatcher]="matcher">
+
+                        <mat-error *ngIf="createDriverForm.get('driverCert').hasError('required')">
+                            กรุณากรอกเลขเลขทะเบียน จป วิชาชีพ
+                        </mat-error>
+                        <mat-error *ngIf="createDriverForm.get('driverCert').hasError('pattern')">
+                            กรุณากรอกเป็นตัวเลข
+                        </mat-error>
+
+                    </mat-form-field>
+
+
+                </div>
+
+
+
+            </div>
+
+        </mat-dialog-content>
+        <mat-dialog-actions class="mat-dialog-actions" align="center">
+            <button mat-dialog-close class="btn cancel-background">ยกเลิก</button>
+            <button type="submit" class="btn black-background">ยืนยัน</button>
+        </mat-dialog-actions>
+    </form>
+
+</div>

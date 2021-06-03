@@ -1,0 +1,123 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-admin">
+            <form [formGroup]="createBlogForm" (ngSubmit)="onSubmit()">
+                <div class="card-header">
+                    <div class="row align-items-center">
+
+                        <div class="col-md-8 mb-2">
+                            <h5 class="card-title"> Blog Edit</h5>
+                        </div>
+
+                        <div class="col-md-4 ">
+                            <div class="row">
+
+                                <div class="col-md-6  align-self-center ">
+                                    <button type="button" class="btn btn-secondary cancel-background" [routerLink]="['/admin/blog']">
+                                        <span><B>ย้อนกลับ</B></span></button >
+                                </div>
+
+                                <div class="col-md-6  align-self-center ">
+                                    <button type="submit" class="btn black-background">
+                                        <span><B>แก้ไข</B></span></button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <div class="modal-body">
+
+                        <div class="row row-data mb-2">
+
+                            <div class="col-md-6 mb-2">
+                                <label>Title</label>
+                                <input type="text" class="form-control" formControlName="title"
+                                    [ngClass]="{ 'is-invalid': submitted && f.title.errors}" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid title.
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-2">
+                                <label>Category</label>
+                                <input disabled type="text" class="form-control" formControlName="category"
+                                    [ngClass]="{ 'is-invalid': submitted && f.category.errors}">
+
+                            </div>
+
+                        </div>
+                        <div class="row row-data mb-2">
+
+                            <div class="col-md-12 mb-2">
+                                <label>Sub Title</label>
+                                <input type="text" class="form-control" formControlName="subTitle"
+                                    [ngClass]="{ 'is-invalid': submitted && f.subTitle.errors}" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid subTitle.
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row row-data mb-2">
+
+                            <div class="col-md-12 mb-2">
+                                <label>Content</label>
+                                <quill-editor class="editor" formControlName="content" [styles]="{height: '280px'}"
+                                    (onFocus)="focus($event)" (onContentChanged)="changedContent($event)"
+                                    (onBlur)="blur($event)" (onEditorCreated)="created($event)"
+                                    [ngClass]="{ 'is-invalid': submitted && f.content.errors}" required>
+                                </quill-editor>
+                                <div class="invalid-feedback"> Please provide a valid content.</div>
+                            </div>
+
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-md-12 ">
+                                <label>รูปภาพ Content</label>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+
+                                            <div class="col-md-5">
+                                                <img alt="User Pic" [src]="url ? url : imageToShow" class="img-upload">
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="custom-file">
+                                                    <input type="file" accept="image/jpg, image/jpeg"
+                                                        class="custom-file-input" formControlName="image"
+                                                        id="validatedCustomFile" (change)="selectFile($event)"
+                                                        >
+
+                                                    <label *ngIf="!url" class="custom-file-label"
+                                                        for="validatedCustomFile">Choosefile...</label>
+                                                    <label *ngIf="url" class="custom-file-label"
+                                                        for="validatedCustomFile">{{imageName}}</label>
+                                                    <div class="invalid-feedback">Example invalid custom file feedback
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

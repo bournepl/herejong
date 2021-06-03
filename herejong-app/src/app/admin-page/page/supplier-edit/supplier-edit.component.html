@@ -1,0 +1,125 @@
+<div class="row" *ngIf="userProfile">
+    <div class="col-md-4">
+        <div class="card card-admin card-user">
+            <div class="row ">
+                <div class="col-12">
+                    <img class="image" src="assets/image/admin3.jpg" alt="...">
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="author">
+
+                    <img class="avatar border-gray" src="{{userProfile.pictureUrl}}" alt="...">
+                    <h5 class="title">{{userProfile.displayName}}</h5>
+
+                    <p class="description">
+                        {{userProfile.email}}
+                    </p>
+
+                    <div class="d-flex justify-content-center  mt-4">
+                        <div class=" mr-2 fa-product-back">
+                            <i class="fa fa-user-size fa-product-hunt product-hunt-icon" aria-hidden="true"></i>
+                        </div>
+                        <div class="d-flex align-items-center text-left mr-5">
+                            <div class="ml-1">
+                                <h5 class="mb-0"> 0 </h5><small>Product</small>
+                            </div>
+                        </div>
+                        <div class="mr-2 fa-point-back">
+                            <i class="fa fa-user-size fa-usd usd-icon" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="d-flex align-items-center text-left">
+
+                            <div class="ml-1">
+                                <h5 class="mb-0"> {{userProfile.point}} </h5><small>Point</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="col-md-8">
+        <div class="card card-admin card-user">
+            <div class="card-header">
+                <h5 class="card-title">Company Profile</h5>
+            </div>
+            <div class="card-body">
+                <form *ngIf="userProfile" [formGroup]="updateProfileForm" (ngSubmit)="onSubmit(userProfile.id)">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>ชื่อบริษัท หรือ ชื่อร้าน</mat-label>
+                        <input matInput formControlName="nameCompany" placeholder="" autocomplete="off"
+                            [errorStateMatcher]="matcher">
+
+                        <mat-error *ngIf="updateProfileForm.get('nameCompany').hasError('required')">
+                            กรุณากรอกชื่อบริษัทหรือชื่อร้าน
+                        </mat-error>
+
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>ชื่อ - สกุล ติดต่อ</mat-label>
+                        <input matInput formControlName="fullname" placeholder="" autocomplete="off"
+                            [errorStateMatcher]="matcher">
+
+                        <mat-error *ngIf="updateProfileForm.get('fullname').hasError('required')">
+                            กรุณากรอกชื่อ - สกุล ติดต่อ
+                        </mat-error>
+
+                    </mat-form-field>
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>เบอร์โทรติดต่อ</mat-label>
+                        <input matInput formControlName="phone" placeholder="" autocomplete="off"
+                            [errorStateMatcher]="matcher">
+
+                        <mat-error *ngIf="updateProfileForm.get('phone').hasError('required')">
+                            กรุณากรอกเบอร์โทรติดต่อ
+                        </mat-error>
+                        <mat-error *ngIf="updateProfileForm.get('phone').hasError('pattern')">
+                            กรุณากรอกเป็นตัวเลข
+                        </mat-error>
+
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>จังหวัด</mat-label>
+                        <mat-select formControlName="provinceCompany">
+                            <mat-option *ngFor="let provinces of provinces" [value]="provinces.name">
+                                {{provinces.name}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="updateProfileForm.get('provinceCompany').hasError('required')">
+                            กรุณาเลือกจังหวัด
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div class="row justify-content-end">
+
+                        <div class="col-md-12 align-self-end text-right">
+                            <button type="button" class="btn btn-secondary cancel-background mb-2" (click)="onBack()">ยกเลิก</button>
+                            <button type="submit" class="btn  black-background mb-2" >ยืนยัน</button>
+
+                        </div>
+
+                    </div>
+                    <!--   <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-secondary cancel-background">ยกเลิก</button>
+                            <button type="submit" class="btn  black-background">แก้ไข</button>
+                        </div>
+                    </div>-->
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

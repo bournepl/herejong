@@ -1,0 +1,85 @@
+
+<div class="dialog-profile">
+    <div class="row row-head">
+        <div class="col-12 text-right">
+            <i class="fa fa-times" aria-hidden="true" (click)="closeDialog()"></i>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-12 text-center">
+            <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-3 align-self-center text-center">
+                            <i class="fa fa-user fa-icon" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="numberphone">ชื่อ - สกุล</span>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-12" *ngIf="driver">
+                                    <span class="fullname">{{driver.driverName}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-3 align-self-center text-center">
+                            <i class="fa fa-id-card fa-icon" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="numberphone">เลขทะเบียน จป วิชาชีพ</span>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-12" *ngIf="driver">
+                                    <span class="fullname">{{driver.driverCert}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mb-1 mt-4">
+        <div class="col-6">
+            <button (click)="onRemoveProfile()" class="btn btn-respon black-warning ">ลบข้อมูล</button>
+        </div>
+        <div class="col-6">
+            <button (click)="onEditProfile()" class="btn btn-respon edit-background">แก้ไขข้อมูล</button>
+        </div>
+    </div>
+
+</div>

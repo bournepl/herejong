@@ -1,0 +1,204 @@
+<div mat-dialog-title class="mat-dialog-title">
+
+
+
+    <div class="row justify-content-between">
+        <div class="col-8">
+            <b><span class="driver-text">เพิ่มรายการสินค้า</span></b>
+        </div>
+        <div class="col-4 text-right">
+            <i class="fa fa-times" aria-hidden="true" (click)="closeDialog()"></i>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="dialog-create">
+    <form [formGroup]="createProductForm" (ngSubmit)="onSubmit()">
+
+
+        <mat-dialog-content class="mat-typography">
+
+
+            <div class="row ">
+
+                <div class="col-md-12">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>กลุ่มสินค้า</mat-label>
+                        <mat-select formControlName="group" (selectionChange)="onChangeGroup($event.value)">
+                            <mat-option *ngFor="let group of group" [value]="group.groupId">
+                                {{group.groupName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="createProductForm.get('group').hasError('required')">
+                            กรุณาเลือกกลุ่มสินค้า
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>ประเภทสินค้า</mat-label>
+                        <mat-select formControlName="category" (selectionChange)="onChangeCategory($event.value)">
+                            <mat-option *ngFor="let category of category" [value]="category.categoryId">
+                                {{category.categoryName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="createProductForm.get('category').hasError('required')">
+                            กรุณาเลือกประเภทสินค้า
+                        </mat-error>
+                    </mat-form-field>
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>ขนาดสินค้า</mat-label>
+                        <mat-select formControlName="productSize" (selectionChange)="onChangeProduct($event.value)">
+                            <mat-option *ngFor="let product of product" [value]="product.productId">
+                                {{product.productName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="createProductForm.get('productSize').hasError('required')">
+                            กรุณาเลือกขนาดสินค้า
+                        </mat-error>
+                    </mat-form-field>
+
+
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>ทะเบียนรถ</mat-label>
+                        <input matInput formControlName="carRegis" placeholder="" autocomplete="off"
+                            [errorStateMatcher]="matcher">
+
+                        <mat-error *ngIf="createProductForm.get('carRegis').hasError('required')">
+                            กรุณากรอกทะเบียนรถ
+                        </mat-error>
+
+                    </mat-form-field>
+
+
+                   <!-- <mat-form-field appearance="outline">
+                        <mat-label>คนขับรถ</mat-label>
+                        <mat-select formControlName="driverName" (selectionChange)="onChangeDriver($event.value)">
+                            <mat-option *ngFor="let driver of driver" [value]="driver.id">
+                                {{driver.driverName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="createProductForm.get('driverName').hasError('required')">
+                            กรุณาเลือกคนขับรถ
+                        </mat-error>
+                    </mat-form-field>-->
+
+
+
+                </div>
+
+                <div class="col-md-12 mb-3 text-right">
+
+                    <ng-multiselect-dropdown class="dropdown-province" formControlName="province"
+                        [placeholder]="'จังหวัดที่ปล่อยเช่า'" [settings]="dropdownSettings" [data]="provinces"
+                        [ngClass]="{ 'is-invalid': submitted && f.province.errors }">
+                    </ng-multiselect-dropdown>
+                    <div *ngIf="submitted && f.province.errors" class="invalid-feedback mb-2">
+                        <div *ngIf="f.province.errors.required"> เลือกอย่างน้อย 1 จังหวัด</div>
+                    </div>
+
+                    <!--  <mat-form-field appearance="outline">
+                        <mat-label>จังหวัดที่ปล่อยเช่า</mat-label>
+                        <mat-select [formControl]="toppingsControl" name="province" multiple>
+
+                            <mat-select-trigger>
+                                <mat-chip-list>
+                                    <mat-chip *ngFor="let topping of toppingsControl.value" [removable]="true" (removed)="onToppingRemoved(topping)">
+                                        {{ topping.name }}
+
+                                        <i class="fa fa-times" aria-hidden="true" matChipRemove></i>
+                                    </mat-chip>
+                                </mat-chip-list>
+                            </mat-select-trigger>
+
+                            <mat-option *ngFor="let provinces of provinces" [value]="provinces">{{provinces.name}}</mat-option>
+
+                        </mat-select>
+                        <mat-error class="mat-error-info" *ngIf="createProductForm.get('province').hasError('required')">
+                            เลือกอย่างน้อย 1 จังหวัด
+                        </mat-error>
+                    </mat-form-field>-->
+
+
+
+
+
+                </div>
+                <!--  <div class="col-md-12 col-image ">
+                    <label class="product-lable">จังหวัดที่ปล่อยเช่า</label>
+
+
+                    <div class="tag-input mb-2 mr-2 ml-2">
+
+                        <tag-input [onlyFromAutocomplete]="true" formControlName="province" [displayBy]="'name'" [identifyBy]="'id'">
+                            <tag-input-dropdown [showDropdownIfEmpty]="true" [autocompleteItems]="provinces" [identifyBy]="'id'" [displayBy]="'name'">
+                            </tag-input-dropdown>
+                        </tag-input>
+                        <mat-error class="mat-error-info" *ngIf="createProductForm.get('province').hasError('required')">
+                            เลือกอย่างน้อย 1 จังหวัด
+                        </mat-error>
+                    </div>
+                </div>-->
+
+
+                <div class="col-md-12 col-image text-right">
+                    <label class="product-lable">รูปภาพเครื่องจักร</label>
+                    <label class="form-group " for="customFile">
+
+                        <img alt="User Pic" [src]="url ? url : imageToShow" class="img-upload">
+
+                        <div class="hover-text" *ngIf="!url">
+                            <i class="fa fa-upload fa-3x" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="hover-filename " *ngIf="url">
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <span class="filename"> <b>{{imageName}}</b> </span>
+                                </div>
+
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <span class="dropDrag">Drag and drop or click to replace</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <label class="hover-remove text-center" *ngIf="url" (click)="delete($event) ">
+                            <div><i class="fa fa-trash fa-2x" aria-hidden="true"></i></div>
+                        </label>
+
+                    </label>
+                    <input type="file" id="customFile" accept="image/jpg, image/jpeg" formControlName="image"
+                        (change)="selectFile($event)" [ngClass]="{ 'is-invalid': submitted && f.image.errors }">
+
+                    <div *ngIf="submitted && f.image.errors" class="invalid-feedback mb-2">
+                        <div *ngIf="f.image.errors.required">กรุณาใส่รูปภาพสินค้า</div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </mat-dialog-content>
+        <mat-dialog-actions class="mat-dialog-actions" align="center">
+            <button mat-dialog-close class="btn cancel-background">ยกเลิก</button>
+            <button type="submit" class="btn black-background">ยืนยัน</button>
+        </mat-dialog-actions>
+    </form>
+
+</div>

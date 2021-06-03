@@ -1,0 +1,96 @@
+<div class="row mt-3 ">
+    <div class="col-md-4 mb-5 " *ngFor="let product of product " (click)="onClick(product) ">
+
+        <div class="card card-user-product">
+
+            <div class="row ">
+
+                <div class="col-md-12  ">
+                    <img class="circle image-card" src="{{imageUrlS3}}{{product.userId}}/{{product.imageName}}" alt=" ">
+                </div>
+
+
+
+
+            </div>
+
+
+            <div class="row  btn-action" *ngFor="let userReaction of userReaction  ">
+
+                <div class="col-12 " *ngIf="product.id === userReaction.productId">
+
+                    <button type="button" class="btn btn-button " matRipple><i class="fa fa-heart fa-heart-love" aria-hidden="true" ></i></button>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-body ">
+
+
+
+                <div class="row  name-category">
+
+                    <div class="col-md-12">
+                        <label> {{product.categoryName}}</label>
+                    </div>
+
+
+
+                </div>
+
+                <div class="row ">
+
+                    <div class="col-md-12 name-contrut ">
+                        <label> {{product.productName}}</label>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+                <!--  <div class="row">
+
+                    <div class="col-6">
+
+
+                        <button type="submit" class="btn black-chat">แชท</button>
+
+                    </div>
+
+                    <div class="col-6">
+
+
+                        <button type="submit" class="btn black-call">โทร</button>
+
+                    </div>
+
+                </div>-->
+
+
+            </div>
+
+            <div class="card-footer ">
+                <div class="row mt-1">
+
+
+                    <div class="col-12 text-right name-price-data">
+
+                        <label class="text-price"><b> &nbsp;  {{product.minPrice| number:'1.0-2'}} - {{product.maxPrice| number:'1.0-2'}} บาท </b></label>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>

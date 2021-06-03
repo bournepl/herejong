@@ -1,0 +1,138 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="container" *ngIf="!getDataStatus">
+    <div class="row mt-5">
+
+        <div class="col-md-12 text-center">
+            <img class="circle image-nodata" src="{{imageUrl}}" alt=" ">
+        </div>
+
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col-md-12 text-center">
+            <label class="no-data">ไม่มีรายการเช่า</label>
+        </div>
+
+    </div>
+
+    <div class="row mt-1">
+
+        <div class="col-md-12 text-center">
+            <label class="no-data-second">ท่านต้องเช่าสินค้าก่อน จึงจะให้คะแนนได้</label>
+        </div>
+
+    </div>
+</div>
+
+<div class="container" *ngIf="getDataStatus">
+
+    <div class="row mt-3 mb-3" *ngFor="let orderGet of orderGet">
+        <div class="col-md-12 mb-4" *ngFor="let orderDetail of orderGet.customerOrderDetail">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-12">
+
+                            <div class="row ">
+                                <div class="col-5 align-self-center">
+                                    <span class="carRegis">ประเภทสินค้า </span>
+                                </div>
+
+                                <div class="col text-right">
+                                    <b><span class="carRegis-text-head"> {{orderDetail.categoryName}}</span></b>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <span class="carRegis">ขนาด </span>
+                                </div>
+
+                                <div class="col text-right">
+                                    <b><span class="carRegis-text"> {{orderDetail.productName}}</span></b>
+                                </div>
+                            </div>
+
+                            <div class="row row-place">
+                                <div class="col-4">
+                                    <span class="carRegis">สถานที่ </span>
+                                </div>
+
+                                <div class="col text-right">
+                                    <b><span class="carRegis-text">{{orderDetail.address}}</span></b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body ">
+                    <div class="row mb-3">
+                        <div class="col-4 col-first text-center">
+                            <div class="row ">
+                                <div class="col text-head">
+                                    เริ่มวันที่
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col text-data">
+                                    {{orderGet.dateStartFormat}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-data-time">
+                                    {{orderDetail.timeStart}} น.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-secound text-center">
+                            <div class="row">
+                                <div class="col text-head">
+                                    คืนวันที่
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col text-data">
+                                    {{orderGet.dateEndFormat}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-data-time">
+                                    {{orderDetail.timeStart}} น.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <div class="row">
+                                <div class="col text-head">
+                                    จำนวน
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col text-data ">
+                                    {{orderDetail.numberDay}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row " *ngFor="let item of orderGet.customerOrderDetail">
+                        <div class="col-12 text-center">
+
+                            <button (click)="onStar(orderGet.userDriverId,orderGet.userProductId,item.id)" type="submit" class="btn black-call">ให้คะแนน</button>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

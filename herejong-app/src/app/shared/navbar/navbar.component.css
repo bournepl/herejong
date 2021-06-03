@@ -1,0 +1,17 @@
+.black-background {
+    background-color: #FD6A02;
+    border: 0px solid #FD6A02;
+    border-radius: 20px;
+    color: black;
+    width: 150px;
+    font-size: 14px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.24), 2px 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.black-background:hover {
+    box-shadow: 2px 7px 10px 0 rgba(0, 0, 0, 0.24), 2px 7px 10px 0 rgba(0, 0, 0, 0.19);
+    background-color: #fd4d02;
+}

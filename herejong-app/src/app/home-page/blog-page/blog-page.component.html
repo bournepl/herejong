@@ -1,0 +1,64 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+<div class="page-header-machine " style="background-image: url('assets/image/product.jpg')">
+    <div class="filter-machine"></div>
+
+    <div class="container ">
+
+        <h2 class="present-title"><b>บทความ</b></h2>
+
+
+        <ul class="nav nav-machine">
+
+            <li class="nav-item">
+                <a [routerLink]="['/th-th/home']" class="nav-link"><i class="nc-icon nc-book-bookmark"></i> หน้าแรก</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><i class="nc-icon nc-book-bookmark"></i> > </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><i class="nc-icon nc-book-bookmark"></i> บทความ</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-4 mb-2 d-flex" *ngFor="let getBlog of getBlog  ">
+            <div class="card card-admin">
+                <img class="image-collection" src="{{imageUrlS3Blog}}{{getBlog.iamge}}" alt=" ">
+                <div class="card-body mb-2">
+                    <span class="card-date"><i class="fa fa-calendar-o mr-2" aria-hidden="true"></i> {{getBlog.date}}</span>
+                    <h5 class="card-title mt-3">{{getBlog.title}}</h5>
+                    <p class="card-text">{{getBlog.suptitle}}</p>
+                </div>
+                <div class="card-footer">
+                    <hr>
+                    <div class="button-container">
+                        <div class="row mb-2">
+                          
+                            <div class="col-md-12  text-read text-right "  [routerLink]="['/th-th/blog/detail',  getBlog.id]">
+    
+                                <span class="">อ่านเพิ่มเติม</span>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+</div>
+
+

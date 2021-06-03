@@ -1,0 +1,37 @@
+<div mat-dialog-title class="mat-dialog-title">
+
+    <div class="row justify-content-between">
+        <div class="col-8">
+            <b><span class="driver-text">ขนาดเครื่องจักร</span></b>
+        </div>
+        <div class="col-4 text-right">
+            <i class="fa fa-times" aria-hidden="true" mat-dialog-close></i>
+        </div>
+    </div>
+
+</div>
+<mat-dialog-content class="mat-typography">
+    <div *ngFor="let product of product" class="row pane" (click)="selectType(product.productName)" [class.active]="product.productName === value">
+
+        <div class="col text-center">
+            <img class="image-cate" src="assets/image/{{product.productId}}.jpg" />
+        </div>
+        <div class="col align-self-center text-center">
+            <span><b>{{product.productName }}</b></span>
+
+        </div>
+        <i class="fa fa-check-circle-o icon fa-2x" [class.icon-active]="product.productName === value" aria-hidden="true"></i>
+
+    </div>
+
+
+
+</mat-dialog-content>
+
+
+<mat-dialog-actions class="justify-content-center">
+
+
+    <button class="btn btn-respon black-susess" (click)="onSave()">ยืนยัน</button>
+
+</mat-dialog-actions>

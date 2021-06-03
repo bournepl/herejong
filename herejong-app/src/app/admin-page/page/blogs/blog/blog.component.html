@@ -1,0 +1,180 @@
+<div class="row mb-4">
+    <div class="col-md-12">
+      
+                <div class="row align-items-center">
+
+                    <div class="col-md-5">
+                        <span class="text-head"> Blog List</span>
+                    </div>
+
+                    <div class="col-md-7 ">
+                        <div class="row">
+                            <div class="col-md-8 align-self-center">
+                                <form>
+                                    <div class="input-group no-border">
+                                        <input type="text" value="" class="form-control input-search"
+                                            placeholder="Search">
+                                        <div class="input-group-append ">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-search"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="col-md-4  align-self-center ">
+                                <button type="button" class="btn black-background" (click)="showChildModal()">
+                                    <span><B>สร้างบทความ</B></span></button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+             
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-md-4 mb-2 d-flex" *ngFor="let getBlog of getBlog  ">
+        <div class="card card-admin">
+            <img class="image-collection" src="{{imageUrlS3}}{{getBlog.iamge}}" alt=" ">
+            <div class="card-body mb-2">
+                <span class="card-date"><i class="fa fa-calendar-o mr-2" aria-hidden="true"></i> {{getBlog.date}}</span>
+                <h5 class="card-title mt-3">{{getBlog.title}}</h5>
+                <p class="card-text">{{getBlog.suptitle}}</p>
+            </div>
+            <div class="card-footer">
+                <hr>
+                <div class="button-container">
+                    <div class="row mb-2">
+                       <!-- <div class="col-md-4 col-6 ml-auto text-eye  text-center" [routerLink]="['/admin/blog/detail', getBlog.id]">
+
+                            <span class=""><i class="fa fa-eye mr-2" aria-hidden="true"></i>ตัวอย่าง</span>
+
+                        </div>-->
+                        <div class="col-md-6 col-6 ml-auto text-pencil mr-auto  text-center" [routerLink]="['/admin/blog/edit',  getBlog.id]">
+
+                            <span class=""><i class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>แก้ไข</span>
+
+                        </div>
+                        <div class="col-md-6 mr-auto text-trash text-center" (click)="onRemove(getBlog.id)">
+
+                            <span class=""><i class="fa fa-trash mr-2" aria-hidden="true" ></i>ลบ</span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="modal fade" bsModal #staticModal="bs-modal" tabindex="-1" role="dialog"
+    aria-labelledby="dialog-static-name">
+
+    <div class="modal-dialog modal-sm modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="dialog-static-name" class="modal-title pull-left">สร้างบทความ</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form [formGroup]="createBlogForm" (ngSubmit)="onSubmit()">
+                <div class="modal-body">
+
+                    <div class="row row-data mb-2">
+
+                        <div class="col-md-6 mb-2">
+                            <label>Title</label>
+                            <input type="text" class="form-control" formControlName="title"
+                                [ngClass]="{ 'is-invalid': submitted && f.title.errors}" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid title.
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-2">
+                            <label>Category</label>
+                            <input disabled type="text" class="form-control" formControlName="category"
+                                [ngClass]="{ 'is-invalid': submitted && f.category.errors}">
+
+                        </div>
+
+                    </div>
+                    <div class="row row-data mb-2">
+
+                        <div class="col-md-12 mb-2">
+                            <label>Sub Title</label>
+                            <input type="text" class="form-control" formControlName="subTitle"
+                                [ngClass]="{ 'is-invalid': submitted && f.subTitle.errors}" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid subTitle.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row row-data mb-2">
+
+                        <div class="col-md-12 mb-2">
+                            <label>Content</label>
+                            <quill-editor class="editor"  formControlName="content" [styles]="{height: '280px'}" (onFocus)="focus($event)"
+                                (onContentChanged)="changedContent($event)" (onBlur)="blur($event)"
+                                (onEditorCreated)="created($event)"   [ngClass]="{ 'is-invalid': submitted && f.content.errors}"  required>
+                            </quill-editor>
+                            <div class="invalid-feedback"> Please provide a valid content.</div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-2">
+                        <div class="col-md-12 ">
+                            <label>รูปภาพ Content</label>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <div class="col-md-5">
+                                            <img alt="User Pic" [src]="url ? url : imageToShow" class="img-upload">
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="custom-file">
+                                                <input type="file" accept="image/jpg, image/jpeg"
+                                                    class="custom-file-input" formControlName="image"
+                                                    id="validatedCustomFile" (change)="selectFile($event)"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.image.errors}" required>
+                                                <label *ngIf="!url" class="custom-file-label"
+                                                    for="validatedCustomFile">Choosefile...</label>
+                                                <label *ngIf="url" class="custom-file-label"
+                                                    for="validatedCustomFile">{{imageName}}</label>
+                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary cancel-background"
+                        (click)="staticModal.hide()">ยกเลิก</button>
+                    <button type="submit" class="btn black-create">ยืนยัน</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

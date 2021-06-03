@@ -1,0 +1,274 @@
+/*.login-page {
+    background-image: url('/assets/image/house2.jpg');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    overflow-x: hidden;
+}
+*/
+
+.matPrefix {
+    margin-left: 4px;
+    font-size: 22px;
+    margin-right: 12px;
+    margin-bottom: 15px;
+}
+
+.black-background {
+    font-size: 15px;
+    background-color: #FD6A02;
+    border: 0px solid #FD6A02;
+    border-radius: 20px;
+    height: 40px;
+    color: black;
+    width: 180px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.24), 2px 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.black-background:hover {
+    box-shadow: 2px 7px 10px 0 rgba(0, 0, 0, 0.24), 2px 7px 10px 0 rgba(0, 0, 0, 0.19);
+    background-color: #fd4d02;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-error {
+    text-align: end;
+}
+
+:host ::ng-deep .mat-form-field-outline-start {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline-gap {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.24);
+}
+
+.layer {
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.form-control {
+    border-radius: 0;
+    padding-left: 40px;
+    height: 50px;
+}
+
+.image-logo {
+    height: 40px;
+    position: absolute;
+    top: 55%;
+    left: 80px;
+}
+
+.image-logo1 {
+    height: 150px;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
+
+.image-login {
+    position: absolute;
+    width: 100%;
+    height: 111%;
+    top: -21px;
+    left: -21px;
+}
+
+.login-page {
+    overflow-x: hidden;
+    background-size: cover;
+    width: 100%;
+    background-image: url('/assets/image/admin1.jpg');
+    min-height: 100vh;
+    max-height: 999px;
+}
+
+.text-ban {
+    font-weight: 700;
+    font-size: 22px;
+    color: black;
+}
+
+.text-ban2 {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 22px;
+    color: #FD6A02;
+}
+
+.text-ban1 {
+    font-size: 20px;
+    color: black;
+}
+
+.row-image {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.card-body {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.col-form {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.card {
+    position: relative;
+    margin-top: 100px;
+    border-radius: 0;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.24), 2px 2px 6px 2px rgba(0, 0, 0, 0.19);
+}
+
+.form-top-left {
+    color: black;
+}
+
+.form-top-right {
+    color: #666;
+}
+
+.forgetpass {
+    font-size: 14px;
+    color: black;
+}
+
+.text-resgister {
+    text-decoration: none;
+    color: rgb(255, 188, 3);
+}
+
+.text-resgister:hover {
+    color: #FFDE03;
+}
+
+.text-regis {
+    color: black;
+}
+
+.input-group-text {
+    width: 40px;
+}
+
+.col-success {
+    margin-left: 1px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.text-content {
+    color: #666;
+}
+
+.dialog-success {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.fa-confirm {
+    color: rgb(72, 190, 56);
+}
+
+.fa-warning {
+    color: #B71C1C;
+}
+
+.black-warning {
+    background-color: #B71C1C;
+    border: 0px solid #B71C1C;
+    color: white;
+    width: 160px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.24), 2px 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.black-warning:hover {
+    box-shadow: 2px 7px 10px 0 rgba(0, 0, 0, 0.24), 2px 7px 10px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(209, 43, 43);
+}
+
+.loading {
+    color: white;
+    padding-top: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.or-text {
+    left: 46%;
+    top: 0;
+    padding: 10px;
+    color: black;
+}
+
+.facebook-img {
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.24), 2px 3px 5px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.google-img {
+    height: 40px;
+    border: solid 1px #ddd;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.24), 2px 3px 5px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 50px;
+    text-align: center;
+    pointer-events: none;
+    color: #ccc;
+}
+
+@media screen and (max-width: 992px) {
+    .row-card {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .image-logo {
+        display: none;
+    }
+    .image-login {
+        display: none;
+    }
+}

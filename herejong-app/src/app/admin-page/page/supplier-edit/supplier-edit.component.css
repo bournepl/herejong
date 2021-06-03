@@ -1,0 +1,130 @@
+.img-top {
+    border-radius: 20px;
+    margin-right: 15px;
+    height: 120px;
+    width: 120px;
+}
+.card-text{
+    font-size: 15px;
+    color: #777777;
+}
+.card-body{
+  
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+
+.image{
+    border-top-left-radius:12px ;
+    border-top-right-radius:12px ;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.fa-product-back{
+    border-radius: 10px;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(255, 229, 197);
+}
+
+.product-hunt-icon{
+    color: rgb(255, 165, 55);
+}
+
+.fa-point-back{
+    border-radius: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(204, 240, 200);
+}
+
+.usd-icon{
+    color: rgb(51, 199, 38);
+}
+
+.fa-user-size{
+    font-size: 20px;
+}
+
+
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-error {
+    text-align: end;
+}
+
+:host ::ng-deep .mat-form-field-outline-start {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline-gap {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline {
+    background-color: white;
+    box-shadow: 2px 4px 8px -5px rgb(135, 135, 135);
+}
+
+
+.cancel-background{
+    margin-right: 10px;
+    font-size: 15px;
+    border-radius: 20px;
+    width: 180px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px 0 rgba(152, 152, 152, 0.24), 2px 3px 5px 0 rgba(136, 136, 136, 0.2);
+}
+
+.cancel-background:hover {
+    box-shadow: 2px 7px 10px 0 rgba(174, 174, 174, 0.24), 2px 7px 1rgba(1rgba(155, 155, 155, 0.19) 0.19);
+}
+
+.black-background {
+    font-size: 15px;
+    background-color: rgb(255, 190, 48);
+    border: 0px solid rgb(255, 195, 30);
+    border-radius: 15px;
+    color: black;
+    width: 180px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px 0 rgba(152, 152, 152, 0.24), 2px 3px 5px 0 rgba(136, 136, 136, 0.2);
+}
+
+.black-background:hover {
+    box-shadow: 2px 7px 10px 0 rgba(174, 174, 174, 0.24), 2px 7px 7px 2px rgba(155, 155, 155, 0.19) ;
+    background-color: rgb(255, 190, 48);
+}
+
+@media screen and (max-width: 992px) {
+    .cancel-background{
+        margin-right: 0px;
+        width: 100%;
+     
+    }
+    .black-background {
+        width: 100%;
+     
+    }
+}
+
+
+

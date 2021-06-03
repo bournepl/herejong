@@ -1,0 +1,882 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="wrapper">
+    <div class="page-header section-dark" style="background-image: url('assets/image/home-image.jpg')">
+        <div class="filter">
+        </div>
+
+
+    </div>
+
+    <div class="row row-card-search mb-2 justify-content-end">
+
+        <div class="col-md-5 col-card-search align-self-end">
+
+            <form [formGroup]="homeFirstForm" (ngSubmit)="onSubmit()" autocomplete="off">
+
+                <div class=" card-search">
+                    <div class="row mb-3">
+
+                        <div class="col-6 align-self-center text-center " *ngFor="let group of getGroup">
+
+                            <div class="row row-head-sreach">
+
+                                <div class="col-12  text-head-sreach "
+                                    (click)="selectType(group.groupName,group.groupId)"
+                                    [class.active]="group.groupName === value">
+                                    <span>เช่า{{group.groupName }}</span>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <!--  <div class="form-top row mb-4">
+                            <div class="text-head col-12">
+                                <h3>ค้นหาเครื่องจักร รถบรรทุก</h3>
+
+                            </div>
+
+                        </div>-->
+
+
+                        <div class="form-row">
+                            <div class="col-md-12 mb-2 ">
+
+
+
+                                <div class="form-group">
+
+                                    <select class="custom-select form-control" formControlName="category"
+                                        (change)="onChangeCategory($event.target.value)">
+                                        <option class="option" value="" selected>ประเภท{{value}}</option>
+                                        <option *ngFor="let category of category" value="{{category.categoryId}}">
+                                            {{category.categoryName}}</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12 mb-2 ">
+                                <div class="form-group">
+                                    <select class="custom-select form-control" formControlName="product">
+                                        <option value="" selected>ขนาด{{value}}</option>
+                                        <option *ngFor="let product of productSize" value="{{product.productId}}">
+                                            {{product.productName}}</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-md-12 mb-2 form-top-center">
+                                <div class="form-group">
+
+
+                                    <select class="custom-select form-control" formControlName="province">
+                                        <option value="" selected> จังหวัด</option>
+                                        <option *ngFor="let province of province" value="{{province.pid}}">
+                                            {{province.name}}</option>
+                                    </select>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-row ">
+
+                            <div class="col  text-right">
+                                <button class="btn btn-primary  black-background" type="submit">
+                                    <span><i class="fa fa-search"></i> ค้นหา</span> </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="section-whyus">
+        <div class="container">
+            <div class="row ">
+
+                <div class="col-md-12">
+
+                    <div class="row mb-5 justify-content-center">
+
+                        <div class="col-md-6 text-center">
+                            <a href="https://lin.ee/gm98wNs" class="btn btn-primary black-register">
+                                <span> ร่วมเป็นผู้ให้บริการกับ herejong</span> </a>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row mb-3">
+                        <div class="col-md-4 mb-3">
+
+                            <div class="row mb-3">
+
+                                <div class="col-md-12 text-center">
+                                    <img class="image-whyus1" src="assets/image/Section1.png" alt=" ">
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-2">
+
+                                <div class="col-md-8 mx-auto text-whyus-first text-center">
+                                    <span>มากกว่า 3,000 รายการ
+                                    </span>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-8 mx-auto text-whyus-secound text-center">
+                                    <span>ให้เช่าเครื่องจักรและรถบรรทุก <br> มากกว่า 3,000 รายการ
+                                    </span>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-4 mb-3">
+
+                            <div class="row mb-3">
+
+                                <div class="col-md-12 text-center">
+                                    <img class="image-whyus2" src="assets/image/Section2.png" alt=" ">
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-2">
+
+                                <div class="col-md-8 mx-auto text-whyus-first text-center">
+                                    <span>มั่นใจ ปลอดภัย
+                                    </span>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6 mx-auto text-whyus-secound text-center">
+                                    <span>มีคนขับพร้อมประกาศนียบัตร
+                                    </span>
+                                </div>
+
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="col-md-4 mb-3">
+
+                            <div class="row mb-3">
+
+                                <div class="col-md-12 text-center">
+                                    <img class="image-whyus3" src="assets/image/Section3.png" alt=" ">
+                                </div>
+
+                            </div>
+
+
+                            <div class="row mb-2">
+
+                                <div class="col-md-8 mx-auto text-whyus-first text-center">
+                                    <span>สะดวกสะบาย
+                                    </span>
+                                </div>
+
+
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6 mx-auto text-whyus-secound text-center">
+                                    <span>เช่าได้ใน 5 นาที
+                                    </span>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="second-line">
+
+
+        <div class="container">
+            <div class="tim-title">
+                <div class="row align-items-center">
+                    <div class="col-12">
+
+                        <span class="text-head-title" (click)="onClickMachine()"> เครื่องจักร</span>
+                    </div>
+                    <!--      <div class="col-6 text-right">
+                        <span class="text-sup-title " (click)="onClickMachine()">ดูทั้งหมด ></span>
+                    </div>-->
+
+                </div>
+            </div>
+            <div class="row mb-2 mt-4">
+
+                <div class="col-md-4">
+
+                    <div class="row">
+
+                        <div class="col-6  col-product">
+
+                            <div class="card-product" (click)="onClickMachine1()">
+
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1010.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถเครน </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6  col-product">
+
+                            <div class=" card-product" (click)="onClickMachine2()">
+
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1011.jpg" alt=" ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถแบคโฮ </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="row">
+
+                        <div class="col-6 col-product">
+                            <div class=" card-product" (click)="onClickMachine3()">
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <img class="image-collection" src="assets/image/1012.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถตัก </span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-6  col-product">
+                            <div class=" card-product " (click)="onClickMachine4()">
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1013.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถบด </span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="row">
+
+                        <div class="col-6 col-product">
+                            <div class=" card-product " (click)="onClickMachine5()">
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1014.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถโฟล์คลิฟต์ </span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-6  col-product">
+                            <div class=" card-product " (click)="onClickMachine6()">
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1015.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถบูมลิฟต์ </span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tim-title">
+                <div class="row mt-4 align-items-center">
+                    <div class="col-12">
+
+                        <span class="text-head-title" (click)="onClickTruck()"> รถบรรทุก</span>
+                    </div>
+                    <!--     <div class="col-6 text-right">
+                        <span class="text-sup-title" (click)="onClickTruck()">ดูทั้งหมด ></span>
+                    </div>-->
+
+                </div>
+            </div>
+            <div class="row mb-5 mt-4">
+
+                <div class="col-md-4">
+
+                    <div class="row">
+
+                        <div class="col-6  col-product">
+
+                            <div class=" card-product " (click)="onClickTruck1()">
+
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1116.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถบรรทุก 6 ล้อ </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6  col-product">
+
+                            <div class=" card-product " (click)="onClickTruck2()">
+
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1117.jpg" alt=" ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถบรรทุก 10 ล้อ </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="row">
+
+                        <div class="col-6 col-product">
+                            <div class=" card-product " (click)="onClickTruck3()">
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1118.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถพ่วง </span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-6  col-product">
+                            <div class=" card-product " (click)="onClickTruck4()">
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1119.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถเทเลอร์ </span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="row">
+
+                        <div class="col-6 col-product">
+                            <div class=" card-product " (click)="onClickTruck5()">
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1120.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถกระบะ </span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-6  col-product">
+                            <div class=" card-product " (click)="onClickTruck6()">
+                                <div class="row ">
+                                    <div class="col-md-12 ">
+                                        <img class="image-collection" src="assets/image/1121.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 collection-name text-center">
+                                        <span> รถสไลด์ </span>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="section" id="carousel">
+            <div class="container">
+                <div class="tim-title">
+                    <h3>ข่าวสารและกิจกรรมที่น่าสนใจ</h3>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-12 mr-auto ml-auto">
+                        <div class="card page-carousel">
+                            <ngb-carousel>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/image/new1.png" alt="Random first slide">
+                                    <!-- <div class="carousel-caption">
+                                        <p>Somewhere</p>
+                                    </div>-->
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/image/new2.png" alt="Random second slide">
+                                    <!--  <div class="carousel-caption">
+                                        <p>Somewhere else</p>
+                                    </div>-->
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/image/new3.png" alt="Random third slide">
+                                    <!--   <div class="carousel-caption">
+                                        <p>Here it is</p>
+                                    </div>-->
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/image/new4.png" alt="Random third slide">
+                                    <!--   <div class="carousel-caption">
+                                        <p>Here it is</p>
+                                    </div>-->
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/image/new5.png" alt="Random third slide">
+                                    <!--   <div class="carousel-caption">
+                                        <p>Here it is</p>
+                                    </div>-->
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/image/new6.png" alt="Random third slide">
+                                    <!--   <div class="carousel-caption">
+                                        <p>Here it is</p>
+                                    </div>-->
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/image/new7.png" alt="Random third slide">
+                                    <!--   <div class="carousel-caption">
+                                        <p>Here it is</p>
+                                    </div>-->
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/image/new8.png" alt="Random third slide">
+                                    <!--   <div class="carousel-caption">
+                                        <p>Here it is</p>
+                                    </div>-->
+                                </ng-template>
+                                <ng-template ngbSlide>
+                                    <img src="./assets/image/new9.png" alt="Random third slide">
+                                    <!--   <div class="carousel-caption">
+                                        <p>Here it is</p>
+                                    </div>-->
+                                </ng-template>
+                            </ngb-carousel>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+
+            <div class="container">
+                <div class="tim-title ">
+                    <h3>สินค้าที่น่าสนใจ</h3>
+                </div>
+                <div class="row mt-4 ">
+                    <div class="col-md-4 mb-5 " *ngFor="let product of product " (click)="onClick(product) ">
+
+                        <div class="card card-user-product">
+
+                            <div class="row ">
+
+                                <div class="col-md-12  ">
+                                    <img class="circle image-card"
+                                        src="{{imageUrlS3}}{{product.userId}}/{{product.imageName}}" alt=" ">
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <div class="row  btn-action" *ngFor="let userReaction of userReaction  ">
+
+                                <div class="col-12 " *ngIf="product.id === userReaction.productId">
+
+                                    <button type="button" class="btn btn-button " matRipple><i
+                                            class="fa fa-heart fa-heart-love" aria-hidden="true"></i></button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="card-body ">
+
+
+
+                                <div class="row  name-category">
+
+                                    <div class="col-md-12">
+                                        <label> {{product.categoryName}}</label>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="row ">
+
+                                    <div class="col-md-12 name-contrut ">
+                                        <label> {{product.productName}}</label>
+                                    </div>
+
+
+
+
+                                </div>
+
+
+
+
+
+
+                                <!--   <div class="row">
+
+                                    <div class="col-6">
+
+
+                                        <button type="submit" class="btn black-chat">แชท</button>
+
+                                    </div>
+
+                                    <div class="col-6">
+
+
+                                        <button type="submit" class="btn black-call">โทร</button>
+
+                                    </div>
+
+                                </div>-->
+
+
+                            </div>
+
+                            <div class="card-footer ">
+                                <div class="row mt-1">
+                                    <div class="col-4  name-category">
+
+                                        <label><B>ช่วงราคา </B></label>
+
+                                    </div>
+
+                                    <div class="col-8 text-right name-price-data">
+
+                                        <label class="text-price"><b> &nbsp; {{product.minPrice| number:'1.0-2'}} -
+                                                {{product.maxPrice| number:'1.0-2'}} บาท </b></label>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="row mb-5">
+
+                    <div class="col-md-12 text-center">
+                        <button type="button" class="btn black-show"
+                            (click)="onOpenProductPage()"><b>ดูทั้งหมด</b></button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="main">
+
+            <div class="container">
+                <div class="tim-title ">
+                    <h3>บทความที่น่าสนใจ</h3>
+                </div>
+                <div class="row mt-4 ">
+                    <div class="col-md-4 mb-2 d-flex" *ngFor="let getBlog of getBlog  ">
+                        <div class="card card-admin">
+                            <img class="image-blog" src="{{imageUrlS3Blog}}{{getBlog.iamge}}" alt=" ">
+                            <div class="card-body mb-2">
+                                <span class="card-date"><i class="fa fa-calendar-o mr-2" aria-hidden="true"></i> {{getBlog.date}}</span>
+                                <h5 class="card-title mt-3">{{getBlog.title}}</h5>
+                                <p class="card-text">{{getBlog.suptitle}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <hr>
+                                <div class="button-container">
+                                    <div class="row mb-2">
+                                      
+                                        <div class="col-md-12  text-read text-right " [routerLink]="['/th-th/blog/detail',  getBlog.id]">
+                
+                                            <span class="">อ่านเพิ่มเติม</span>
+                
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row mb-5">
+
+                    <div class="col-md-12 text-center">
+                        <button type="button" class="btn black-show"
+                        [routerLink]="['/th-th/blog']"><b>ดูทั้งหมด</b></button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!--    <div class="section-whyus">
+            <div class="container">
+                <div class="row mb-5">
+
+                    <div class="col-md-12">
+
+                        <div class="row mb-5">
+                            <div class="col-md-12 text-center">
+                                <span class="text-home">Why Us?</span>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-4 mb-3">
+
+                                <div class="row mb-3">
+
+                                    <div class="col-md-12 text-center">
+                                        <img class="image-whyus" src="assets/image/whyus1.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-6 mx-auto  text-center">
+                                        <span>We provide a complete set of drawing to you, and you can use it to apply for every permit
+                                        </span>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-md-4 mb-3">
+
+                                <div class="row mb-3">
+
+                                    <div class="col-md-12 text-center">
+                                        <img class="image-whyus" src="assets/image/whyus3.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-md-6 mx-auto  text-center">
+                                        <span>Every designer have a certificate from council
+                                            </span>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="col-md-4 mb-3">
+
+                                <div class="row mb-3">
+
+                                    <div class="col-md-12 text-center">
+                                        <img class="image-whyus" src="assets/image/whyus2.jpg" alt=" ">
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row">
+
+                                    <div class="col-md-6 mx-auto  text-center">
+                                        <span>we offer a reasonable price to everyone
+        
+                                                </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+-->
+
+
+
+
+    </div>
+</div>

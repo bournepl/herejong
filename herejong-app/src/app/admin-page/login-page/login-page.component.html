@@ -1,0 +1,104 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+
+<div class="login-page">
+
+
+
+    <div class="layer">
+
+
+        <div class="row row-card mb-4 ">
+
+            <div class="col-md-8 mx-auto">
+                <div class="card card-login">
+                    <div class="card-body">
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <img class="image-login" src="assets/image/sign in image.jpg" alt="image-login">
+
+
+                                </div>
+
+
+                                <div class="col-md-6 col-form">
+
+                                    <div class="row  mb-3">
+                                        <div class="col-md-12 text-center">
+                                            <label class="text-ban">WELCOME TO</label>
+                                            <a [routerLink]="['/th-th/home']" class="text-ban2"> HEREJONG</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row  mb-3">
+                                        <div class="col-md-12 text-center">
+                                            <h6 class="text-ban1">Login</h6>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="card-layer ">
+
+
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Username</mat-label>
+                                            <i matPrefix class="fa fa-user matPrefix" aria-hidden="true"></i>
+                                            <input class="rdonly" matInput formControlName="username" placeholder="" autocomplete="off" [errorStateMatcher]="matcher">
+
+                                            <mat-error *ngIf="loginForm.get('username').hasError('required')">
+                                                กรุณากรอก Username
+                                            </mat-error>
+
+                                        </mat-form-field>
+
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Password</mat-label>
+                                            <i matPrefix class="fa fa-lock matPrefix" aria-hidden="true"></i>
+                                            <input type="password" class="rdonly" matInput formControlName="password" placeholder="" autocomplete="off" [errorStateMatcher]="matcher">
+
+                                            <mat-error *ngIf="loginForm.get('password').hasError('required')">
+                                                กรุณากรอก Password
+                                            </mat-error>
+
+                                        </mat-form-field>
+
+
+                                        <div class="row mt-2">
+
+                                            <div class="col  text-center">
+                                                <button type="button" class="btn btn-primary  black-background" type="submit">
+                                              <span> เข้าสู่ระบบ</span> </button>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+                                </div>
+
+                            </div>
+
+
+
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,241 @@
+.image-back {
+    right: 0;
+    top: -30px;
+    width: 100%;
+    height: 250px;
+    position: absolute;
+}
+
+.text-welcome {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-error {
+    text-align: end;
+}
+
+:host ::ng-deep .mat-form-field-outline-start {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline-gap {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.24);
+}
+
+.black-background {
+    background-color: #FFDE03;
+    width: 45%;
+    border-radius: 30px;
+    font-size: 16px;
+    color: black;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.25);
+}
+
+.black-background:hover {
+    box-shadow: 2px 7px 10px 0 rgba(0, 0, 0, 0.24), 2px 7px 10px 0 rgba(0, 0, 0, 0.19);
+    background-color: #FFDE03;
+}
+
+.cancel-background {
+    margin-right: 10px;
+    font-size: 16px;
+    border-radius: 30px;
+    width: 45%;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px 0 rgba(152, 152, 152, 0.24), 2px 3px 5px 0 rgba(136, 136, 136, 0.2);
+}
+
+.cancel-background:hover {
+    box-shadow: 2px 7px 10px 0 rgba(0, 0, 0, 0.24), 2px 7px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.black-warning {
+    background-color: #B71C1C;
+    border: 0px solid #B71C1C;
+    color: white;
+    width: 120px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.24), 2px 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.black-warning:hover {
+    box-shadow: 2px 7px 10px 0 rgba(0, 0, 0, 0.24), 2px 7px 10px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(209, 43, 43);
+}
+
+.black-susess {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #FFDE03;
+    width: 50%;
+    border-radius: 30px;
+    font-size: 20px;
+    color: black;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.24), 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.black-susess:hover {
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.24), 2px 2px 4px 2px rgba(0, 0, 0, 0.19);
+    background-color: #FFDE03;
+}
+
+.mat-dialog-title {
+    font-family: 'Prompt', sans-serif;
+}
+
+.pane {
+    padding: 10px;
+    margin: 10px;
+    background-color: #ffffff;
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 3px 1px #b3b3b3;
+    border-radius: 20px;
+    position: relative;
+}
+
+.image-cate {
+    width: auto;
+    height: 10vh;
+    max-width: 120px;
+}
+
+.active {
+    position: relative;
+    box-shadow: 3px 4px 6px 2px #807f7f;
+}
+
+.fa-check-circle-o {
+    position: absolute;
+    right: 8px;
+    top: 5px;
+    display: none;
+    color: green;
+}
+
+.icon-active {
+    display: inline-flex;
+}
+
+.fa-times {
+    color: #777777;
+    font-size: 25px;
+}
+
+div.pac-container {
+    z-index: 1050 !important;
+}
+
+.text-area {
+    height: 200px;
+}
+
+.button-submit {
+    position: fixed;
+    bottom: 0;
+}
+
+.container {
+    padding-bottom: 60px;
+}
+
+.img-upload {
+    width: 100%;
+    height: 120px;
+    border-radius: 1%;
+}
+
+.hoverable {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.24);
+}
+
+.hover-remove {
+    position: absolute;
+    padding: 5px;
+    background-color: red;
+    width: 40px;
+    border-radius: 3px;
+    color: #fff;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    transition: visibility 0s, opacity 0.3s linear;
+}
+
+.dropDrag {
+    color: #444;
+    font-size: 12px;
+}
+
+.filename {
+    font-size: 16px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+#customFile {
+    display: none;
+}
+
+#customFile2 {
+    display: none;
+}
+
+#customFile3 {
+    display: none;
+}
+
+#customFile4 {
+    display: none;
+}
+
+.col-image {
+    border-radius: 20px;
+    padding-top: 20px;
+    margin: 15px;
+    border: 3px dashed #bbbbbb;
+}
+
+.product-lable {
+    font-size: 16px;
+    font-weight: bold;
+    top: -18px;
+    left: 0;
+    position: absolute;
+    padding: 6px;
+    background-color: white;
+}
+
+.btn-success {
+    width: 100%;
+}
+
+.driver-text{
+    font-size: 17px;
+    font-weight: bold;
+}

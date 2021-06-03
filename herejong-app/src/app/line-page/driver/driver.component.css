@@ -1,0 +1,186 @@
+.row-head{
+    top: -20px ;
+}
+
+.fa-times{
+    color: #777777;
+    font-size: 25px;
+}
+.fa-plus {
+    position: fixed;
+    color: black;
+    background-color: #FFEB3B;
+    padding-left: 15px;
+    padding-top: 12px;
+    padding-right: 15px;
+    padding-bottom: 12px;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+}
+
+.container {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    position: absolute;
+    max-width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    left: 0;
+    top: 0;
+}
+
+.driver-text {
+    font-size: 20px;
+    font-weight: 900;
+}
+.card {
+    border-radius: 30px;
+    box-shadow: 2px 3px 4px 1px rgba(118, 118, 118, 0.24);
+}
+
+.fullname {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.numberphone {
+    font-size: 15px;
+    color: #555;
+}
+
+.black-background {
+    background-color: #FFDE03;
+    border: 1px solid #FFDE03;
+    height: 45px;
+    width: 45%;
+    border-radius: 30px;
+    font-size: 20px;
+    color: black;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.24), 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.black-background:hover {
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.24), 2px 2px 4px 2px rgba(0, 0, 0, 0.19);
+    background-color: #FFDE03;
+}
+
+.edit-background {
+    background-color: #FFDE03;
+    border: 1px solid #FFDE03;
+    height: 45px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 20px;
+    color: black;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.24), 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.black-background:hover {
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.24), 2px 2px 4px 2px rgba(0, 0, 0, 0.19);
+    background-color: #FFDE03;
+}
+
+.cancel-background {
+    margin-right: 15px;
+    background-color: black;
+    border: 1px solid black;
+    height: 45px;
+    width: 45%;
+    border-radius: 30px;
+    font-size: 20px;
+    color: white;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.24), 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cancel-background:hover {
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.24), 2px 2px 4px 2px rgba(0, 0, 0, 0.19);
+    background-color: black;
+}
+
+.black-warning {
+    background-color: #B71C1C;
+    border: 0px solid #B71C1C;
+    color: white;
+    height: 45px;
+    width: 100%;
+    border-radius: 30px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.24), 2px 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.black-warning:hover {
+    box-shadow: 2px 7px 10px 0 rgba(0, 0, 0, 0.24), 2px 7px 10px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(209, 43, 43);
+}
+
+
+.mat-typography {
+    font-family: 'Prompt', sans-serif;
+}
+
+.fa-icon {
+    font-size: 25px;
+}
+
+.fa-iamge {
+    font-size: 100px;
+}
+
+.fa-iamge-upload {
+    bottom: 0;
+    font-size: 20px;
+    position: absolute;
+}
+
+.mat-error-info {
+    font-size: 13px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-error {
+    text-align: end;
+}
+
+:host ::ng-deep .mat-form-field-outline-start {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline-gap {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.24);
+}
+
+.mat-dialog-actions {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.btn{
+    font-size: 16px;
+    font-weight: 700;
+}

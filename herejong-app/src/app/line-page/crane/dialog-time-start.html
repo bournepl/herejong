@@ -1,0 +1,67 @@
+<form [formGroup]="timeStartForm">
+
+    <div mat-dialog-title class="mat-dialog-title">
+
+        <div class="row justify-content-between">
+            <div class="col-8">
+                <b><span class="driver-text">เวลาเริ่มงาน</span></b>
+            </div>
+            <div class="col-4 text-right">
+                <i class="fa fa-times" aria-hidden="true" mat-dialog-close></i>
+            </div>
+        </div>
+
+    </div>
+    <mat-dialog-content class="mat-typography">
+
+        <div class="row">
+            <div class="col-6">
+
+                <div class="form-group text-right">
+                    <select class="custom-select form-control" formControlName="hour" [ngClass]="{ 'is-invalid': submitted && f.hour.errors }">
+                            <option  value="">เวลา</option>
+                            <option  value="08">08</option>
+                            <option  value="09">09</option>
+                            <option  value="10">10</option>
+                            <option  value="11">11</option>
+                            <option  value="12">12</option>
+                            <option  value="13">13</option>
+                            <option  value="14">14</option>
+                            <option  value="15">15</option>
+                            <option  value="16">16</option>
+                            <option  value="17">17</option>
+ 
+                    </select>
+                    <div *ngIf="submitted && f.hour.errors" class="invalid-feedback">
+                        <div *ngIf="f.hour.errors.required">กรุณาเเวลา</div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-6">
+                <div class="form-group text-right">
+                    <select class="custom-select form-control" formControlName="min" [ngClass]="{ 'is-invalid': submitted && f.min.errors }">
+                      
+                            <option  value="00">00</option>
+                            <option  value="30">30</option>
+                        </select>
+                    <div *ngIf="submitted && f.min.errors" class="invalid-feedback">
+                        <div *ngIf="f.min.errors.required">กรุณานาที</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </mat-dialog-content>
+
+
+    <mat-dialog-actions class="justify-content-center">
+
+
+        <button class="btn btn-respon black-susess" (click)="onSave()">ยืนยัน</button>
+
+    </mat-dialog-actions>
+</form>

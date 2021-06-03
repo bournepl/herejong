@@ -1,0 +1,145 @@
+
+
+        <div mat-dialog-title class="mat-dialog-title">
+
+            
+
+            <div class="row justify-content-between">
+                <div class="col-8">
+                    <b><span class="driver-text">ข้อมูลสินค้า</span></b>
+                </div>
+                <div class="col-4 text-right">
+                    <i class="fa fa-times" aria-hidden="true" (click)="closeDialog()"></i>
+                </div>
+              </div>
+
+        </div>
+
+<div class="dialog-profile">
+    <mat-dialog-content class="mat-typography">
+       
+    
+        <div class="row">
+            <div class="col">
+
+                <div class="card" *ngIf="userProduct">
+                    <img class="card-img-top"src="{{imageUrlS3}}{{userProduct.imageName}}" alt="Card image cap">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body ">
+                        <div class="row ">
+                            <div class="col-12 ">
+                                <div class="row" *ngIf="userProduct">
+
+                                    <div class="col-5">
+                                        <span class="left-text">กลุ่มสินค้า</span>
+                                    </div>
+
+                                    <div class="col-7 text-right">
+                                        <span class="right-text">{{userProduct.groupName}}</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-5">
+                                        <span class="left-text">ประเภทสินค้า</span>
+                                    </div>
+
+                                    <div class="col-7 text-right">
+                                        <span class="right-text">{{userProduct.categoryName}}</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-5">
+                                        <span class="left-text">ขนาดสินค้า</span>
+                                    </div>
+
+                                    <div class="col-7 text-right">
+                                        <span class="right-text">{{userProduct.productName}}</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-5">
+                                        <span class="left-text">ทะเบียนรถ</span>
+                                    </div>
+
+                                    <div class="col-7 text-right">
+                                        <span class="right-text">{{userProduct.carRegister}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!--  <div class="row mt-2">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-2 align-self-center text-center">
+                                <i class="fa fa-user fa-icon" aria-hidden="true"></i>
+                            </div>
+
+                            <div class="col-10">
+                                <div class="row">
+
+                                    <div class="col-12">
+                                        <span class="left-text">คนขับรถ</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-12">
+                                        <span class="right-text">{{userProduct.driver.driverName}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <div class="row mt-2 mb-3">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+
+
+
+                            <div class="col-12">
+                                <div class="row mb-2">
+
+                                    <div class="col-12">
+                                        <span class="left-text">จังหวัดที่ปล่อยเช่า</span>
+                                    </div>
+                                </div>
+                                <div class="horizontal">
+                                    <div class="clip" *ngFor="let provinceProduct of provinceProduct">{{provinceProduct.name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions class="mat-dialog-actions" align="center">
+
+        <button (click)="onRemoveProduct()" class="btn black-warning">ลบข้อมูล</button>
+        <button (click)="onEditProduct()" class="btn btn-respon black-background mt-2 mb-2">แก้ไขข้อมูล</button>
+
+    </mat-dialog-actions>
+</div>

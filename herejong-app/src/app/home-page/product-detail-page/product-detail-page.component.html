@@ -1,0 +1,427 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+<div class="section-main">
+
+    <div class="container">
+
+        <div class="row mb-2" *ngIf="userProduct">
+
+
+            <div class="col-md-7">
+                <div class="row ">
+
+                    <div class="col-md-12">
+
+                        <div>
+                            <img alt="User Pic" src="{{imageUrlS3}}{{userProduct.imageName}}" class="img-detail">
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="col-md-5 mb-3 row-detail">
+
+                <div class="row  btn-action-sh ">
+
+                    <div class="col-12 ">
+
+
+
+                        <button type="button" class="btn btn-button-sh" matRipple><i class="fa fa-heart fa-fa-share" aria-hidden="true" ></i> 
+                        </button>
+
+
+                        <button type="button" class="btn btn-button-sh " matRipple><i class="fa fa-share-alt fa-fa-share" aria-hidden="true"></i> 
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+                <div class="row ">
+
+                    <div class="col-md-12">
+
+                        <div>
+                            <span class="text-head-detail"> <b>{{userProduct.productName}}</b></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3 ">
+
+                    <div class="col-md-12">
+
+
+                        <div>
+                            <ng-template #t let-fill="fill">
+                                <span class="star" [class.full]="fill === 100">
+                              <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                                </span>
+                            </ng-template>
+
+                            <ngb-rating [max]="5" [(rate)]="starRating" [starTemplate]="t" [readonly]="true"></ngb-rating>
+                            <span class="star-rating">{{starRating}} ({{starRatingLength}} รีวิว)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row  mb-3">
+
+                    <div class="col-md-12">
+
+                        <div>
+                            <span class="text-bath"> <b>฿{{userProduct.minPrice| number:'1.0-2'}} - {{userProduct.maxPrice| number:'1.0-2'}}</b></span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row  ">
+
+                    <div class="col-4">
+
+                        <label class="product-text"><B>กลุ่มสินค้า</B></label>
+
+                    </div>
+                    <div class="col-8">
+                        <label class="product-text-detail">: {{userProduct.groupName}}</label>
+
+                    </div>
+                </div>
+
+                <div class="row  ">
+                    <div class="col-4">
+
+                        <label class="product-text"><B>ประเภทสินค้า</B></label>
+
+                    </div>
+                    <div class="col-8">
+                        <label class="product-text-detail">: {{userProduct.categoryName}}</label>
+
+                    </div>
+
+                </div>
+
+                <div class="row mb-4 ">
+                    <div class="col-4">
+
+                        <label class="product-text"><B>ทะเบียนรถ</B></label>
+
+                    </div>
+                    <div class="col-8">
+                        <label class="product-text-detail">: {{userProduct.carRegister}}</label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-6">
+
+
+                        <a href="https://lin.ee/vLz8Yoj" type="submit" class="btn black-chat">แชท</a>
+
+                    </div>
+
+                    <div class="col-6">
+
+
+                        <a href="tel:+66642152145" type="submit" class="btn black-call">โทร</a>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class="row mb-4">
+            <div class="col-md-7">
+                <div class="card card-detail ">
+
+                    <div class="card-body">
+
+
+                        <div class="row mb-4">
+
+
+                            <div class="col-md-12">
+                                <span class="text-head-main"> <b>จังหวัดที่ปล่อยเช่า</b></span>
+                            </div>
+
+                        </div>
+
+                        <div class="row mb-4">
+
+                            <div class="col-md-12 align-self-center ">
+                                <div class="horizontal">
+                                    <div class="clip" *ngFor="let provinceProduct of provinceProduct">{{provinceProduct.name}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+     <!--   <div class="row mb-5" *ngIf="userDriver">
+
+            <div class="col-md-7">
+
+                <div class="card card-detail ">
+
+                    <div class="card-body">
+
+
+                        <div class="row mb-4">
+                            <div class="col-md-12">
+                                <span class="text-head-main"> <b>คนขับรถ</b></span>
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-12">
+
+
+                                <div class="row">
+
+                                    <div class="col-md-5  text-center">
+
+                                        <div class="row ">
+
+                                            <div class="col-md-12 picture-img mb-3"> <img alt="User Pic" [src]="imageAccount" class="img-circle img-sm"></div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-7  text-center">
+
+                                        <div class="row mb-1">
+
+                                            <div class="col-md-12 ">
+                                                <h5> <b>{{userDriver.driverName}}</b></h5>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="row mb-2">
+
+                                            <div class="col-md-12">
+                                                <span> <b>เลขทะเบียน จป วิชาชีพ : {{userDriver.driverCert}}</b></span>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="row mb-2 ">
+
+                                            <div class="col-md-12">
+
+
+                                                <div>
+                                                    <ng-template #t let-fill="fill">
+                                                        <span class="star" [class.full]="fill === 100">
+                                                      <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                                                        </span>
+                                                    </ng-template>
+
+                                                    <ngb-rating [max]="5" [(rate)]="starRatingDriver" [starTemplate]="t" [readonly]="true"></ngb-rating>
+                                                    <span class="star-rating">{{starRatingDriver}} ({{starRatingDriverLength}} รีวิว)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    -->
+
+
+
+
+    </div>
+
+
+</div>
+
+<div class="section-other">
+
+    <div class="container">
+
+        <div class="row mb-4">
+
+
+            <div class="col-md-12 mb-2 align-self-center ">
+                <span class="text-head-main"> <b>สินค้าอื่นๆที่น่าสนใจ </b> </span>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="row ">
+            <div class="col-md-4 mb-5 " *ngFor="let product of productOther " (click)="onClick(product) ">
+
+                <div class="card card-user-product">
+
+                    <div class="row ">
+
+                        <div class="col-md-12  ">
+                            <img class="circle image-card" src="{{imageUrlS3Other}}{{product.userId}}/{{product.imageName}}" alt=" ">
+                        </div>
+
+
+
+
+                    </div>
+
+
+                    <div class="row  btn-action" *ngFor="let userReaction of userReaction  ">
+
+                        <div class="col-12 " *ngIf="product.id === userReaction.productId">
+
+                            <button type="button" class="btn btn-button " matRipple><i class="fa fa-heart fa-heart-love" aria-hidden="true" ></i></button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-body ">
+
+
+
+                        <div class="row  name-category">
+
+                            <div class="col-md-12">
+                                <label> {{product.categoryName}}</label>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="row ">
+
+                            <div class="col-md-12 name-contrut ">
+                                <label> {{product.productName}}</label>
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+
+
+                        <!--  <div class="row">
+
+                            <div class="col-6">
+
+
+                                <button type="submit" class="btn black-chat">แชท</button>
+
+                            </div>
+
+                            <div class="col-6">
+
+
+                                <button type="submit" class="btn black-call">โทร</button>
+
+                            </div>
+
+                        </div>-->
+
+
+                    </div>
+
+                    <div class="card-footer ">
+                        <div class="row mt-1">
+                            <div class="col-4   name-category">
+
+                                <label><B>ช่วงราคา </B></label>
+
+                            </div>
+
+                            <div class="col-8 text-right name-price-data">
+
+                                <label class="text-price"><b> &nbsp;  {{product.minPrice| number:'1.0-2'}} - {{product.maxPrice| number:'1.0-2'}} บาท </b></label>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>

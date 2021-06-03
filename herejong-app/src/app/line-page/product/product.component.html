@@ -1,0 +1,90 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+
+<div class="container">
+
+
+    <div class="row ">
+        <div class="col">
+            <span class="driver-text">รายการสินค้า</span>
+        </div>
+
+    </div>
+
+    <div class="row mt-2">
+        <div class="col">
+            <mat-form-field class="search" appearance="outline">
+                <mat-label>ประเภทสินค้า</mat-label>
+                <i matPrefix class="fa fa-search matPrefix" aria-hidden="true"></i>
+                <mat-select  (selectionChange)="onChangeCategory($event.value)">
+                    <mat-option [value]="">
+                        ทั้งหมด
+                    </mat-option>
+                    <mat-option *ngFor="let productCategoryName of productCategoryName" [value]="productCategoryName.categoryId">
+                        {{productCategoryName.categoryName}}
+                    </mat-option>
+                </mat-select>
+
+            </mat-form-field>
+        </div>
+
+    </div>
+
+
+    <div class="row mb-3" *ngFor="let product of product">
+        <div class="col">
+            <div class="card" (click)="onProductDetail(product.id)">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-4 align-self-center text-center">
+                            <img class="image-mach" src="{{imageUrlS3}}{{product.imageName}}" />
+                        </div>
+
+                        <div class="col-8">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="productSize">{{product.productName}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <span class="carRegis">ทะเบียน </span>
+                                </div>
+
+                                <div class="col text-right">
+                                    <b><span class="carRegis-text"> {{product.carRegister}}</span></b>
+                                </div>
+                            </div>
+                         <!--  <div class="row">
+
+                                <div class="col-4">
+                                    <span class="driver">คนขับ </span>
+                                </div>
+                                <div class="col text-right">
+                                    <b><span class="text-driver">{{product.driver.driverName}} </span></b>
+                                </div>
+                            </div>--> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+</div>
+
+<div class="plus" (click)="onCreateProduct()">
+    <div class="row ">
+        <div class="col ">
+            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+        </div>
+
+    </div>
+</div>

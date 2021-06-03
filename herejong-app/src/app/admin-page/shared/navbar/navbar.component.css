@@ -1,0 +1,44 @@
+.input-group {
+    border-radius: 20px;
+    box-shadow: 2px 4px 8px -6px rgb(135, 135, 135);
+}
+
+.input-search {
+    font-size: 14px;
+    height: 30px;
+    background-color: rgb(228, 228, 228);
+    border-radius: 20px;
+    border: 0;
+}
+
+.input-group-text {
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: rgb(228, 228, 228);
+    border: 0;
+}
+
+.col-text {
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 60%;
+    background-color: rgb(228, 228, 228);
+}
+
+.fa {
+    padding-right: 15px;
+}
+
+.fa-power-off {
+    color: red;
+    font-weight: 700;
+}
+
+.text-logout {
+    color: red;
+    font-weight: 700;
+}
+
+.nav-item {
+    cursor: pointer;
+}

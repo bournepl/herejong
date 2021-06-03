@@ -1,0 +1,93 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="rental">
+
+    <div class="row mt-3 mb-3" *ngFor="let orderGet of orderGet">
+        <div class="col" *ngFor="let orderDetail of orderGet.customerOrderDetail">
+            <div class="card" (click)="onProductDetail()">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-12">
+    
+                            <div class="row ">
+                                <div class="col-5 align-self-center">
+                                    <span class="carRegis">ประเภทสินค้า </span>
+                                </div>
+    
+                                <div class="col text-right">
+                                    <b><span class="carRegis-text-head"> {{orderDetail.categoryName}}</span></b>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <span class="carRegis">ขนาด </span>
+                                </div>
+    
+                                <div class="col text-right">
+                                    <b><span class="carRegis-text"> {{orderDetail.productName}}</span></b>
+                                </div>
+                            </div>
+    
+                            <div class="row row-place">
+                                <div class="col-4">
+                                    <span class="carRegis">สถานที่ </span>
+                                </div>
+    
+                                <div class="col text-right">
+                                    <b><span class="carRegis-text">{{orderDetail.address}}</span></b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-4 col-first text-center">
+                            <div class="row ">
+                                <div class="col text-head">
+                                    เริ่มวันที่
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col text-data">
+                                    {{orderGet.dateStartFormat}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 col-secound text-center">
+                            <div class="row">
+                                <div class="col text-head">
+                                    เวลา
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col text-data">
+                                    {{orderDetail.timeStart}} น.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <div class="row">
+                                <div class="col text-head">
+                                    จำนวน
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                <div class="col text-data">
+                                    {{orderDetail.numberDay}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>

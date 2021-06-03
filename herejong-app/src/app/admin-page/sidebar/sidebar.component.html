@@ -1,0 +1,17 @@
+<div class="sidebar-wrapper">
+    <div class="logo">
+        <a href="" class="simple-text logo-normal">
+            <div class="logo-image-small">
+                <img class="image-logo" src="assets/image/logo1.jpg">
+            </div>
+        </a>
+    </div>
+    <ul class="nav">
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+            <a [routerLink]="[menuItem.path]">
+                <i class="{{menuItem.icon}}"></i>
+                <b><p>{{menuItem.title}}</p></b>
+            </a>
+        </li>
+    </ul>
+</div>

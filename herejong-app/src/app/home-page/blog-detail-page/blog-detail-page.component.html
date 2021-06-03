@@ -1,0 +1,108 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+<div class="section-main">
+
+    <div class="container">
+
+        <div class="row mb-2" *ngIf="getBlogById">
+
+
+            <div class="col-md-12 mb-2">
+                <div class="card card-admin">
+
+                    <div class="card-header">
+                        <div class="row">
+
+                            <div class="col-md-7">
+                                <img class="img-detail" src="{{imageUrlS3Blog}}{{getBlogById.iamge}}" alt=" ">
+                            </div>
+                            <div class="col-md-5">
+    
+                                <span class="card-date"><i class="fa fa-calendar-o mr-2" aria-hidden="true"></i>
+                                    {{getBlogById.date}}</span>
+                                <h5 class="card-title mt-3">{{getBlogById.title}}</h5>
+                                <p class="card-text">{{getBlogById.suptitle}}</p>
+    
+                            </div>
+                        </div>
+                      
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+
+                            <div class="col-md-12" >
+                              <div [innerHTML]="getBlogById.content"></div>
+                            </div>
+                           
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+</div>
+
+<div class="section-other">
+
+    <div class="container">
+
+        <div class="row mb-4">
+
+
+            <div class="col-md-12 mb-2 align-self-center ">
+                <span class="text-head-main"> <b>บทความอื่นๆที่น่าสนใจ </b> </span>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="row ">
+
+            <div class="col-md-4 mb-2 d-flex" *ngFor="let getBlog of getBlog  ">
+                <div class="card card-admin">
+                    <img class="image-blog" src="{{imageUrlS3Blog}}{{getBlog.iamge}}" alt=" ">
+                    <div class="card-body mb-2">
+                        <span class="card-date"><i class="fa fa-calendar-o mr-2" aria-hidden="true"></i>
+                            {{getBlog.date}}</span>
+                        <h5 class="card-title mt-3">{{getBlog.title}}</h5>
+                        <p class="card-text">{{getBlog.suptitle}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <hr>
+                        <div class="button-container">
+                            <div class="row mb-2">
+
+                                <div class="col-md-12  text-read text-right " [routerLink]="['/th-th/blog/detail',  getBlog.id]">
+
+                                    <span class="">อ่านเพิ่มเติม</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

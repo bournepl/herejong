@@ -1,0 +1,190 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<img class="image-back" src="assets/image/back.png" />
+
+
+<div class="container " *ngIf="userProfileGet">
+
+    <div class="row mb-3">
+        <div class="col-12 text-center">
+            <div>
+                <img class="img-top" src="{{userProfileGet.pictureUrl}}" alt="Card image cap">
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col text-center">
+            <span class="text-name">{{userProfileGet.displayName}}</span>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col text-center">
+            <span class="text-email">{{userProfileGet.email}}</span>
+        </div>
+    </div>
+
+
+    <div class="row ">
+        <div class="col-md-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-3 align-self-center text-center">
+                            <i class="fa fa-building fa-size" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="left-text">ชื่อบริษัท หรือ ชื่อร้าน</span>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="clip">{{userProfileGet.companyProfile.nameCompany}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-3 align-self-center text-center">
+                            <i class="fa fa-user fa-size" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="left-text">ชื่อ - สกุล ติดต่อ</span>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="clip">{{userProfileGet.companyProfile.fullname}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-3 align-self-center text-center">
+                            <i class="fa fa-phone fa-size" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="left-text">เบอร์โทรติดต่อ</span>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="clip">{{userProfileGet.companyProfile.phone}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-3 align-self-center text-center">
+                            <i class="fa fa-map-marker fa-size" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="left-text">จังหวัด</span>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="clip">{{userProfileGet.companyProfile.provinceCompany}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-3 align-self-center text-center">
+                            <i class="fa fa-usd fa-size" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="left-text">เหรียญ</span>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="clip">{{userProfileGet.point}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="plus" *ngIf="userProfileGet" (click)="onUpdateProfile(userProfileGet.id)">
+    <div class="row ">
+        <div class="col ">
+            <i class="fa fa-pencil fa-2x" aria-hidden="true"></i>
+        </div>
+
+    </div>
+</div>

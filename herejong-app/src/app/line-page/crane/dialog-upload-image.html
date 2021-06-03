@@ -1,0 +1,102 @@
+<div mat-dialog-title class="mat-dialog-title">
+
+    <div class="row justify-content-between">
+        <div class="col-8">
+            <b><span class="driver-text">รูปภาพหน้างาน</span></b>
+        </div>
+        <div class="col-4 text-right">
+            <i class="fa fa-times" aria-hidden="true" mat-dialog-close></i>
+        </div>
+    </div>
+
+</div>
+<mat-dialog-content class="mat-typography">
+
+    <div class="row">
+        <div class="col-6 mb-2">
+
+            <label class="form-group hoverable" for="customFile">
+
+                    <label class="hover-remove text-center" *ngIf="url" (click)="delete($event) ">
+                        <div><i class="fa fa-trash fa-2x" aria-hidden="true"></i></div>
+                    </label>
+
+            <img alt="User Pic" [src]="url ? url : imageToShow" class="img-upload">
+
+
+
+            </label>
+            <input type="file" id="customFile" accept="image/*" (change)="selectFile($event)">
+
+
+        </div>
+
+        <div class="col-6 mb-2">
+
+            <label class="form-group hoverable" for="customFile2">
+        
+                    <label class="hover-remove text-center" *ngIf="url2" (click)="delete2($event) ">
+                        <div><i class="fa fa-trash fa-2x" aria-hidden="true"></i></div>
+                    </label>
+
+            <img alt="User Pic" [src]="url2 ? url2 : imageToShow" class="img-upload">
+
+
+
+
+            </label>
+            <input type="file" id="customFile2" accept="image/*" (change)="selectFile2($event)">
+
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-6 mb-2">
+
+            <label class="form-group hoverable" for="customFile3">
+                    
+                    <label class="hover-remove text-center" *ngIf="url3" (click)="delete3($event) ">
+                        <div><i class="fa fa-trash fa-2x" aria-hidden="true"></i></div>
+                    </label>
+
+            <img alt="User Pic" [src]="url3 ? url3 : imageToShow" class="img-upload">
+
+
+
+            </label>
+            <input type="file" id="customFile3" accept="image/*" (change)="selectFile3($event)">
+
+
+        </div>
+
+        <div class="col-6 mb-2">
+
+            <label class="form-group hoverable" for="customFile4">
+        
+                    <label class="hover-remove text-center" *ngIf="url4" (click)="delete4($event) ">
+                        <div><i class="fa fa-trash fa-2x" aria-hidden="true"></i></div>
+                    </label>
+            <img alt="User Pic" [src]="url4 ? url4 : imageToShow" class="img-upload">
+
+
+
+            </label>
+            <input type="file" id="customFile4" accept="image/*" (change)="selectFile4($event)">
+
+
+        </div>
+
+    </div>
+
+
+</mat-dialog-content>
+
+
+<mat-dialog-actions class="justify-content-center">
+
+
+    <button class="btn btn-respon black-susess" (click)="onSave()">ยืนยัน</button>
+
+</mat-dialog-actions>

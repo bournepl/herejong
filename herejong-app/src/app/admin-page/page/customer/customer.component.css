@@ -1,0 +1,47 @@
+.mat-table {
+    font-family: 'Prompt', sans-serif;
+}
+
+.card-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+table {
+    width: 100%;
+}
+
+.black-background {
+    font-size: 15px;
+    background-color: #FD6A02;
+    border: 0px solid #FD6A02;
+    border-radius: 15px;
+    color: black;
+    width: 180px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px 0 rgba(152, 152, 152, 0.24), 2px 3px 5px 0 rgba(136, 136, 136, 0.2);
+}
+
+.black-background:hover {
+    box-shadow: 2px 7px 10px 0 rgba(174, 174, 174, 0.24), 2px 7px 1rgba(1rgba(155, 155, 155, 0.19) 0.19);
+    background-color: #fd4d02;
+}
+
+.input-group {
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px -6px rgb(135, 135, 135);
+}
+
+.input-search {
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border-right: 0;
+}
+
+.input-group-text {
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}

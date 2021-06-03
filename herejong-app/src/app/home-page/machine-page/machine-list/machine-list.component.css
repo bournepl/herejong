@@ -1,0 +1,97 @@
+.image-card {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border: 0;
+    border-radius: 0;
+}
+
+.card-user-product {
+    position: relative;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    height: 100%;
+    box-shadow: 2px 2px 3px 1px rgba(177, 177, 177, 0.24), 0px 0px 3px 1px rgba(111, 111, 111, 0.19);
+    cursor: pointer;
+}
+
+.card-user-product:hover {
+    background-color: #ffffff;
+    box-shadow: 3px 3px 6px 2px rgba(0, 0, 0, 0.24), 2px 2px 6px 2px rgba(0, 0, 0, 0.19);
+}
+
+.black-chat {
+    background-color: white;
+    border: 1px solid #FD6A02;
+    border-radius: 20px;
+    height: 40px;
+    color: black;
+    width: 100%;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+
+.black-chat:hover {
+    box-shadow: 2px 3px 3px 0 rgba(0, 0, 0, 0.24);
+    background-color: #fd4d02;
+}
+
+.black-call {
+    background-color: #FD6A02;
+    border: 0px solid #FD6A02;
+    border-radius: 20px;
+    height: 40px;
+    color: black;
+    width: 100%;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+
+.black-call:hover {
+    box-shadow: 2px 3px 3px 0 rgba(0, 0, 0, 0.24);
+    background-color: #fd4d02;
+}
+
+.text-head {
+    font-size: 18px;
+}
+
+.name-category {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(81, 81, 81);
+    cursor: pointer;
+}
+
+.name-contrut {
+    font-size: 17px;
+    font-weight: 700;
+    color: black;
+}
+
+.name-contrut-data {
+    font-size: 15px;
+    font-weight: 700;
+    color: #444;
+}
+
+.name-price-data {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(255, 0, 0);
+}
+
+.card-footer {
+    background-color: white;
+}
+
+@media (max-width: 500px) {
+    .image-card {
+        height: 220px;
+    }
+}

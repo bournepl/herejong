@@ -1,0 +1,307 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+
+<div class="page-header-machine " style="background-image: url('assets/image/product.jpg')">
+    <div class="filter-machine"></div>
+
+    <div class="container ">
+
+        <h2 class="present-title"><b>เช่าเครื่องจักร รถบรรทุก</b></h2>
+
+
+        <ul class="nav nav-machine">
+
+            <li class="nav-item">
+                <a [routerLink]="['/th-th/home']" class="nav-link"><i class="nc-icon nc-book-bookmark"></i> หน้าแรก</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><i class="nc-icon nc-book-bookmark"></i> > </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"><i class="nc-icon nc-book-bookmark"></i> เครื่องจักร รถบรรทุก</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mb-3">
+
+            <div class="row mb-4">
+
+                <div class="col-12">
+                    <div class="card card-search ">
+
+
+                        <div class="card-body ">
+
+
+
+                            <div class="row row-head">
+
+                                <div class="col-md-12">
+                                    <span class="style-plans"><b>หมวดหมู่</b></span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="row row-headline ">
+
+                                <div class="col-md-12">
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row row-data" *ngFor="let item of itemGroup ; let i = index">
+
+                                <div class="col-md-8 ">
+
+                                    <mat-checkbox [checked]="selectedGroup===i " [value]="item.id" (change)="onCheckedGroup($event ,i)"> <span class="all-plans ">{{item.name}}</span></mat-checkbox>
+
+                                </div>
+
+                                <div class="col-md-4 text-right ">
+                                    <span class="style-plans-num "></span>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row" *ngIf="showCatrgoryMachine">
+
+                <div class="col-12">
+                    <div class="card card-search ">
+
+
+                        <div class="card-body ">
+
+
+
+                            <div class="row row-head">
+
+                                <div class="col-md-12">
+                                    <span class="style-plans"><b>ประเภทเครื่องจักร</b></span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="row row-headline ">
+
+                                <div class="col-md-12">
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row row-data" *ngFor="let item of item ; let i = index">
+
+                                <div class="col-md-8 ">
+
+                                    <mat-checkbox [checked]="selected===i " [value]="item.id" (change)="onChecked($event ,i)"> <span class="all-plans ">{{item.name}}</span></mat-checkbox>
+
+                                </div>
+
+                                <div class="col-md-4 text-right ">
+                                    <span class="style-plans-num "></span>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row " *ngIf="showCatrgoryTruck">
+
+                <div class="col-12">
+                    <div class="card card-search ">
+
+
+                        <div class="card-body ">
+
+
+
+                            <div class="row row-head">
+
+                                <div class="col-md-12">
+                                    <span class="style-plans"><b>ประเภทรถบรรทุก</b></span>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="row row-headline ">
+
+                                <div class="col-md-12">
+
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row row-data" *ngFor="let item of itemTruck ; let i = index">
+
+                                <div class="col-md-8 ">
+
+                                    <mat-checkbox [checked]="selectedTruck===i " [value]="item.id" (change)="onCheckedTruck($event ,i)"> <span class="all-plans ">{{item.name}}</span></mat-checkbox>
+
+                                </div>
+
+                                <div class="col-md-4 text-right ">
+                                    <span class="style-plans-num "></span>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        <div class="col-md-9 ">
+
+            <form [formGroup]="searchForm" autocomplete="off">
+                <div class="row mb-3">
+
+                    <div class="col-md-12">
+                        <div class="input-group input-search-group">
+
+                            <input formControlName="search" type="text" placeholder="Search" class="form-control input-search" />
+                            <div class="input-group-prepend ">
+                                <span class="input-group-text input-search-text" id="basic-addon1" (click)="onSubmit()">
+                                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                  </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="row ">
+                    <div class="col-md-4 ">
+                        <mat-form-field appearance="outline">
+
+                            <mat-label>ขนาด</mat-label>
+                            <mat-select formControlName="product" (selectionChange)="onChangeProduct($event)">
+                                <mat-option value="">
+                                    ทุกขนาด
+                                </mat-option>
+                                <mat-option *ngFor="let product of productSize" [value]="product.productId">
+                                    {{product.productName}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-4 ">
+
+
+                        <mat-form-field appearance="outline">
+
+                            <mat-label>จังหวัดที่ให้บริการ</mat-label>
+                            <mat-select formControlName="province" (selectionChange)="onChangeProvince($event)">
+                                <mat-option value="">
+                                    ทุกจังหวัด
+                                </mat-option>
+                                <mat-option *ngFor="let province of province" [value]="province.pid">
+                                    {{province.name}}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+
+                    </div>
+
+
+
+                    <div class="col-md-4 ">
+                        <mat-form-field appearance="outline">
+
+                            <mat-label>เรียงตาม</mat-label>
+                            <mat-select formControlName="sort">
+
+
+                            </mat-select>
+
+                        </mat-form-field>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+            </form>
+            <div *ngIf="machineListComponent">
+
+                <router-outlet></router-outlet>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>

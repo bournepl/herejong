@@ -1,0 +1,1327 @@
+<div class="row" *ngIf="userProfile">
+    <div class="col-md-9">
+        <div class="card card-admin ">
+            <div class="card-body card-body-company">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+
+                        <div class="d-flex justify-content-between flex-column ">
+
+                            <div class="row">
+                                <div class="col-md-4 mb-2 col-profile">
+                                    <img class="img-top " src="{{userProfile.pictureUrl}}" alt="Card image cap">
+
+                                </div>
+                                <div class="col-md-8 mb-2 col-profile">
+
+                                    <div class="d-flex flex-column ml-1">
+                                        <div class="mb-3">
+                                            <h5 class="mb-1">{{userProfile.displayName}} </h5>
+                                            <span class="card-text">{{userProfile.email}}</span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <a [routerLink]="['/admin/suppiler/edit', userProfile.userId]"
+                                                    class="btn btn-edit mb-2" target="_self"> <i
+                                                        class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>Edit
+                                                </a>
+                                                <button (click)="onRemoveAll()" type="button"
+                                                    class="btn btn-outline-danger mb-2">
+                                                    Delete</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="d-flex flex-profile mt-2">
+                                <div class=" mr-2 fa-product-back">
+                                    <i class="fa fa-user-size fa-user usd-icon" aria-hidden="true"></i>
+
+                                </div>
+                                <div class="d-flex align-items-center text-left mr-4">
+                                    <div class="ml-1">
+                                        <h5 class="mb-0"> {{driverLenght}} </h5><small>Driver</small>
+                                    </div>
+                                </div>
+                                <div class="mr-2 fa-point-back">
+                                    <i class="fa fa-user-size fa-product-hunt product-hunt-icon" aria-hidden="true"></i>
+
+                                </div>
+
+                                <div class="d-flex align-items-center text-left">
+
+                                    <div class="ml-1">
+                                        <h5 class="mb-0"> {{productLenght}} </h5><small>Product</small>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="row mb-2">
+
+                            <div class="col-5 text-company">
+                                <i class="fa fa-building mr-2" aria-hidden="true"></i>Company Name
+                            </div>
+
+                            <div class="col-7 text-company-data">
+                                {{userProfile.companyProfile.nameCompany}}
+                            </div>
+
+                        </div>
+                        <div class="row mb-2">
+
+                            <div class="col-5 text-company">
+                                <i class="fa fa-id-badge mr-2" aria-hidden="true"></i>Company Id
+                            </div>
+
+                            <div class="col-7  text-company-data">
+                                {{userProfile.companyId}}
+                            </div>
+
+                        </div>
+                        <div class="row mb-2">
+
+                            <div class="col-5 text-company">
+                                <i class="fa fa-user mr-2" aria-hidden="true"></i>Full Name
+                            </div>
+
+                            <div class="col-7  text-company-data">
+                                {{userProfile.companyProfile.fullname}}
+                            </div>
+
+                        </div>
+
+                        <div class="row mb-2">
+
+                            <div class="col-5 text-company">
+                                <i class="fa fa-phone mr-2" aria-hidden="true"></i>Phone
+                            </div>
+
+                            <div class="col-7  text-company-data">
+                                {{userProfile.companyProfile.phone}}
+                            </div>
+
+                        </div>
+
+                        <div class="row mb-2">
+
+                            <div class="col-5 text-company">
+                                <i class="fa fa-location-arrow mr-2" aria-hidden="true"></i>Province
+                            </div>
+
+                            <div class="col-7  text-company-data">
+                                {{userProfile.companyProfile.provinceCompany}}
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+        <div class="card card-admin">
+            <div class="card-body ">
+
+                <div class="row mb-3 mt-3">
+                    <div class="col-md-12 text-center">
+                        <button type="button" class="usd-circle"><i class="fa fa-usd fa-3x"
+                                aria-hidden="true"></i></button>
+                    </div>
+
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12 text-center text-point-data">
+                        {{userProfile.point | number
+                        }}
+                    </div>
+
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12 text-center text-point">
+                        เหรียญ
+                    </div>
+
+                </div>
+              <!--  <div class="row mb-2">
+                    <div class="col-md-12 ">
+                        <button (click)="showPointModal()" type="button" class="btn black-point"><i
+                                class="fa fa-plus mr-2"></i>เพิ่มเหรียญ</button>
+                    </div>
+
+                </div>-->
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--<div class="row">
+
+    <div class="col-md-12">
+        <div class="card card-admin card-user">
+            <div class="card-header">
+                <div class="row align-items-center">
+
+                    <div class="col-md-8">
+                        <h5 class="card-title">Driver List</h5>
+                    </div>
+
+                    <div class="col-md-4 text-right">
+                        <button type="button" class="btn black-background" (click)="showChildModal()">
+                            <span><i class="fa fa-plus"></i> เพิ่มคนขับ</span> </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="example-container mat-elevation-z0">
+                    <div class="example-table-container">
+                        <table mat-table [dataSource]="dataSource2" matSort>
+
+                            
+                            <ng-container matColumnDef="position">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>NO.</b> </th>
+                                <td mat-cell *matCellDef="let element; let i = index;" data-label="no">
+                                    {{paginator.pageIndex == 0 ? i + 1 : 1 + i + paginator.pageIndex *
+                                    paginator.pageSize}}</td>
+                            </ng-container>
+
+                          
+                            <ng-container matColumnDef="driverId">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>DRIVER ID</b> </th>
+                                <td class="mat-driver" mat-cell *matCellDef="let element" data-label="driver id"> {{element.driverId}}
+                                </td>
+                            </ng-container>
+
+                         
+                            <ng-container matColumnDef="driverName">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>DRIVER NAME</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="name"> {{element.driverName}} </td>
+                            </ng-container>
+
+                           
+                            <ng-container matColumnDef="driverCert">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>CERTIFICATE</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="CERTIFICATE"> {{element.driverCert}}
+                                </td>
+                            </ng-container>
+
+
+                          
+                            <ng-container matColumnDef="action">
+                                <th class="text-center" mat-header-cell *matHeaderCellDef> <b>ACTION</b> </th>
+
+                                <td mat-cell *matCellDef="let element" class="last-mat-cell text-center">
+
+
+                                    <button type="button" class="btn btn-action mr-1" matRipple
+                                        (click)="showChildModal2(element)"><i class="fa fa-info-circle"
+                                            aria-hidden="true"></i></button>
+                                    <button type="button" class="btn btn-action mr-1" matRipple
+                                        (click)="showChildModal3(element)"><i class="fa fa-pencil"
+                                            aria-hidden="true"></i></button>
+                                    <button type="button" class="btn btn-action" matRipple
+                                        (click)="onRemoveDriver(element.id)"><i class="fa fa-trash fa-trash-table"
+                                            aria-hidden="true"></i></button>
+
+
+                                </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+                        </table>
+                    </div>
+                    <mat-paginator [pageSizeOptions]="[10, 20,50]" showFirstLastButtons></mat-paginator>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="card card-admin card-user">
+            <div class="card-header">
+                <div class="row align-items-center">
+
+                    <div class="col-md-8">
+                        <h5 class="card-title">Product List</h5>
+                    </div>
+
+                    <div class="col-md-4 text-right">
+                        <button type="button" class="btn black-background" type="submit" (click)="openModal(template)">
+                            <span><i class="fa fa-plus"></i> เพิ่มสินค้า</span> </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="example-container mat-elevation-z0">
+                    <div class="example-table-container">
+                        <table mat-table [dataSource]="dataSource" matSort>
+
+                            <!-- Position Column -->
+                            <ng-container matColumnDef="position">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>NO.</b> </th>
+                                <td mat-cell *matCellDef="let element; let i = index;" data-label="no">
+                                    {{paginator.pageIndex == 0 ? i + 1 : 1 + i + paginator.pageIndex *
+                                    paginator.pageSize}}</td>
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="productId">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>PRODUCT ID</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="id"> {{element.productId}} </td>
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="groupName">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>GROUP NAME</b> </th>
+                                <td mat-cell *matCellDef="let element" class='m-card-title' data-label="group name">
+                                    {{element.groupName}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="categoryName">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>CATEGORY NAME</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="CATEGORY NAME">
+                                    {{element.categoryName}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="productName">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>PRODUCT NAME</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="PRODUCT NAME">
+                                    {{element.productName}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="carRegister">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>CAR REGIS</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="CAR REGIS"> {{element.carRegister}}
+                                </td>
+                            </ng-container>
+                            <!-- Symbol Column 
+                            <ng-container matColumnDef="driver">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>DRIVER</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="DRIVER">
+                                    {{element.driver.driverName}} </td>
+                            </ng-container>-->
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="action">
+                                <th class="text-center" mat-header-cell *matHeaderCellDef> <b>ACTION</b> </th>
+
+                                <td mat-cell *matCellDef="let element" class=" text-center">
+
+
+                                    <button type="button" class="btn btn-action mr-1" matRipple
+                                        (click)="openModal2(element)"><i class="fa fa-info-circle"
+                                            aria-hidden="true"></i></button>
+                                    <button type="button" class="btn btn-action mr-1" matRipple
+                                        (click)="openModal3(element)"><i class="fa fa-pencil"
+                                            aria-hidden="true"></i></button>
+                                    <button type="button" class="btn btn-action"
+                                        (click)="onTest3(element.userId,element.id)"><i
+                                            class="fa fa-trash fa-trash-table" aria-hidden="true"></i></button>
+
+
+                                </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="duplicate">
+                                <th class="text-center" mat-header-cell *matHeaderCellDef> <b>DUPLICATE</b> </th>
+
+                                <td mat-cell *matCellDef="let element" class="last-mat-cell text-center">
+
+
+                                    <button type="button" class="btn btn-action mr-1" matRipple
+                                        (click)="onDuplicate(element)"><i class="fa fa-files-o"
+                                            aria-hidden="true"></i></button>
+                                 
+
+                                </td>
+                            </ng-container>
+
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                    <mat-paginator [pageSizeOptions]="[10, 20,50]" showFirstLastButtons></mat-paginator>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="card card-admin card-user">
+            <div class="card-header">
+                <div class="row align-items-center">
+
+                    <div class="col-md-8">
+                        <h5 class="card-title">Point History List</h5>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="example-container mat-elevation-z0">
+                    <div class="example-table-container">
+                        <table mat-table [dataSource]="dataSource3" matSort>
+
+                            <!-- Position Column -->
+                            <ng-container matColumnDef="position">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>NO.</b> </th>
+                                <td mat-cell *matCellDef="let element; let i = index;" data-label="no">
+                                    {{paginator.pageIndex == 0 ? i + 1 : 1 + i + paginator.pageIndex *
+                                    paginator.pageSize}}</td>
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="pointId">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>POINT ID</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="id"> {{element.pointId}} </td>
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="timestamp">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>DATE</b> </th>
+                                <td mat-cell *matCellDef="let element" class='m-card-title' data-label="DATE">
+                                    {{element.timestamp}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="point">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>POINT</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="POINT">
+                                    {{element.point}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="price">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>PRICE</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="PRICE">
+                                    {{element.price}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="infoPayment">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>PAYMENT INFO</b> </th>
+                                <td mat-cell *matCellDef="let element" data-label="PAYMENT INFO"
+                                [ngClass]="{
+                                    'is-red': element.infoPayment == '',
+                                    'is-yello': element.infoPayment == 'โอนเงิน',
+                                    'is-blue': element.infoPayment == 'บัตรเครดิต'
+                                  }"> 
+                                  <span class="span-text" *ngIf="element.infoPayment == ''"> รอดำเนินการ</span>
+                                  <span class="span-text" *ngIf="element.infoPayment != ''"> {{element.infoPayment}}</span>
+                                </td>
+                            </ng-container>
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="statusPayment">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>PAYMENT STATUS</b> </th>
+                                <td class="mat-cell-last-second" mat-cell *matCellDef="let element" data-label="STATUS"  
+                                [ngClass]="{
+                                    'is-red': element.statusPayment == false,
+                                    'is-green': element.statusPayment == true
+                                  }">
+                                    <span class="span-text" *ngIf="element.statusPayment == false"> รอดำเนินการ</span>
+                                    <span class="span-text" *ngIf="element.statusPayment == true">  เสร็จสมบูรณ์</span>
+                                </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="action">
+                                <th class="text-center" mat-header-cell *matHeaderCellDef> <b>ADD POINT</b> </th>
+
+                                <td mat-cell *matCellDef="let element" class="last-mat-cell text-center" >
+
+                                    <div *ngIf="element.infoPayment == '' && element.statusPayment == false">
+                                    </div>
+                                    <div *ngIf="element.infoPayment != '' && element.statusPayment == false">
+                                        <button *ngIf="userProfile" (click)="showDialogUpdatePoint(element,userProfile.id)" type="button" class="btn black-point">ยืนยัน</button>
+                                    </div>
+                                 
+                                </td>
+                            </ng-container>
+
+                                           
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns3;"></tr>
+                        </table>
+                    </div>
+                    <mat-paginator [pageSizeOptions]="[10, 20,50]" showFirstLastButtons></mat-paginator>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="modal fade" bsModal #pointModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+
+    <div class="modal-dialog modal-sm modal-dialog-driver">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="dialog-static-name" class="modal-title pull-left">เพิ่มเหรียญ</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="pointModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form *ngIf="userProfile" [formGroup]="pointForm" (ngSubmit)="onSubmitPoint(userProfile.id)">
+                <div class="modal-body">
+
+                    <div class="row row-data">
+
+                        <div class="col-md-12">
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>จํานวนเหรียญที่ต้องการเพิ่ม</mat-label>
+
+                                <mat-select formControlName="point">
+                                    <mat-option [value]="5000">5,000 เหรียญ / 500 บาท</mat-option>
+                                    <mat-option [value]="10000">10,000 เหรียญ / 1,000 บาท</mat-option>
+                                    <mat-option [value]="24000">24,000 เหรียญ / 2,000 บาท</mat-option>
+                                    <mat-option [value]="36000">36,000 เหรียญ / 3,000 บาท</mat-option>
+                                    <mat-option [value]="60000">60,000 เหรียญ / 5,000 บาท</mat-option>
+                                    <mat-option [value]="85000">85,000 เหรียญ / 7,000 บาท</mat-option>
+                                    <mat-option [value]="150000">150,000 เหรียญ / 10,000 บาท</mat-option>
+                                    <mat-option [value]="240000">240,000 เหรียญ / 15,000 บาท</mat-option>
+                                    <mat-option [value]="350000">350,000 เหรียญ / 20,000 บาท</mat-option>
+                                </mat-select>
+
+                                <mat-error *ngIf="pointForm.get('point').hasError('required')">
+                                    กรุณาเลือกจํานวนเหรียญที่ต้องการเพิ่ม
+                                </mat-error>
+
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary cancel-background"
+                        (click)="pointModal.hide()">ยกเลิก</button>
+                    <button type="submit" class="btn black-background">ยืนยัน</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+-->
+
+
+
+<div class="modal fade" bsModal #staticModal="bs-modal" tabindex="-1" role="dialog"
+    aria-labelledby="dialog-static-name">
+
+    <div class="modal-dialog modal-sm modal-dialog-driver">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="dialog-static-name" class="modal-title pull-left">เพิ่มคนขับ</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form [formGroup]="createDriverForm" (ngSubmit)="onSubmitDriver()">
+                <div class="modal-body">
+
+                    <div class="row row-data">
+
+
+                        <div class="col-md-12 mt-2 mb-4 text-center ">
+                            <i class="fa fa-user-circle fa-iamge" aria-hidden="true"></i>
+                            <i class="fa fa-camera fa-iamge-upload" aria-hidden="true"></i>
+                        </div>
+
+
+
+                        <div class="col-md-12">
+
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>ชื่อ - สกุล</mat-label>
+                                <input matInput formControlName="fullname" placeholder="" autocomplete="off"
+                                    [errorStateMatcher]="matcher">
+
+                                <mat-error *ngIf="createDriverForm.get('fullname').hasError('required')">
+                                    กรุณากรอกชื่อ - สกุล
+                                </mat-error>
+
+                            </mat-form-field>
+
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>เลขทะเบียน จป วิชาชีพ (ถ้ามี)</mat-label>
+                                <input matInput formControlName="driverCert" placeholder="" autocomplete="off"
+                                    [errorStateMatcher]="matcher">
+
+                                <mat-error *ngIf="createDriverForm.get('driverCert').hasError('required')">
+                                    กรุณากรอกเลขเลขทะเบียน จป วิชาชีพ
+                                </mat-error>
+                                <mat-error *ngIf="createDriverForm.get('driverCert').hasError('pattern')">
+                                    กรุณากรอกเป็นตัวเลข
+                                </mat-error>
+
+                            </mat-form-field>
+
+
+                        </div>
+
+
+
+                    </div>    
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary cancel-background"
+                        (click)="staticModal.hide()">ยกเลิก</button>
+                    <button type="submit" class="btn black-background">ยืนยัน</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="modal fade" bsModal #staticModal3="bs-modal" tabindex="-1" role="dialog"
+    aria-labelledby="dialog-static-name">
+
+    <div class="modal-dialog modal-sm modal-dialog-driver">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="dialog-static-name" class="modal-title pull-left">แก้ไขคนขับ</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal3.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form *ngIf="driverEdit" [formGroup]="editDriverForm" (ngSubmit)="onSubmitDriverEdit(driverEdit.id)">
+                <div class="modal-body">
+
+                    <div class="row row-data">
+
+
+                        <div class="col-md-12 mt-2 mb-4 text-center ">
+                            <i class="fa fa-user-circle fa-iamge" aria-hidden="true"></i>
+                            <i class="fa fa-camera fa-iamge-upload" aria-hidden="true"></i>
+                        </div>
+
+
+
+                        <div class="col-md-12">
+
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>ชื่อ - สกุล</mat-label>
+                                <input matInput formControlName="fullname" placeholder="" autocomplete="off"
+                                    [errorStateMatcher]="matcher">
+
+                                <mat-error *ngIf="editDriverForm.get('fullname').hasError('required')">
+                                    กรุณากรอกชื่อ - สกุล
+                                </mat-error>
+
+                            </mat-form-field>
+
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>เลขทะเบียน จป วิชาชีพ (ถ้ามี)</mat-label>
+                                <input matInput formControlName="driverCert" placeholder="" autocomplete="off"
+                                    [errorStateMatcher]="matcher">
+
+                                <mat-error *ngIf="editDriverForm.get('driverCert').hasError('required')">
+                                    กรุณากรอกเลขเลขทะเบียน จป วิชาชีพ
+                                </mat-error>
+                                <mat-error *ngIf="editDriverForm.get('driverCert').hasError('pattern')">
+                                    กรุณากรอกเป็นตัวเลข
+                                </mat-error>
+
+                            </mat-form-field>
+
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary cancel-background"
+                        (click)="staticModal3.hide()">ยกเลิก</button>
+                    <button type="submit" class="btn black-background">ยืนยัน</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!--<div class="modal fade" bsModal #staticModal2="bs-modal" tabindex="-1" role="dialog"
+    aria-labelledby="dialog-static-name">
+    <div class="modal-dialog modal-sm modal-dialog-driver">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="dialog-static-name" class="modal-title pull-left">รายละเอียดคนขับ</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal2.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row mt-2">
+                    <div class="col-12 text-center">
+                        <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="card card-detail">
+                            <div class="card-body">
+                                <div class="row">
+
+                                    <div class="col-3 align-self-center text-center">
+                                        <i class="fa fa-user fa-icon" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="col-9">
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <span class="numberphone">ชื่อ - สกุล</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-12" *ngIf="driverSingle">
+                                                <span class="fullname">{{driverSingle.driverName}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="col">
+                        <div class="card card-detail">
+                            <div class="card-body">
+                                <div class="row">
+
+                                    <div class="col-3 align-self-center text-center">
+                                        <i class="fa fa-id-card fa-icon" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="col-9">
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <span class="numberphone">เลขทะเบียน จป วิชาชีพ</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-12" *ngIf="driverSingle">
+                                                <span class="fullname">{{driverSingle.driverCert}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+-->
+
+
+<ng-template #template>
+    <form [formGroup]="createProductForm" (ngSubmit)="onSubmit()">
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">เพิ่มสินค้า</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="row ">
+
+                <div class="col-md-4">
+
+                    <mat-form-field class="outline" appearance="outline">
+                        <mat-label>กลุ่มสินค้า</mat-label>
+                        <mat-select formControlName="group" (selectionChange)="onChangeGroup($event.value)">
+                            <mat-option *ngFor="let group of group" [value]="group.groupId">
+                                {{group.groupName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="createProductForm.get('group').hasError('required')">
+                            กรุณาเลือกกลุ่มสินค้า
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>ประเภทสินค้า</mat-label>
+                        <mat-select formControlName="category" (selectionChange)="onChangeCategory($event.value)">
+                            <mat-option *ngFor="let category of category" [value]="category.categoryId">
+                                {{category.categoryName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="createProductForm.get('category').hasError('required')">
+                            กรุณาเลือกประเภทสินค้า
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>ขนาดสินค้า</mat-label>
+                        <mat-select formControlName="productSize" (selectionChange)="onChangeProduct($event.value)">
+                            <mat-option *ngFor="let product of product" [value]="product.productId">
+                                {{product.productName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="createProductForm.get('productSize').hasError('required')">
+                            กรุณาเลือกขนาดสินค้า
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+            </div>
+            <div class="row ">
+
+
+                <div class="col-md-12">
+
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>ทะเบียนรถ</mat-label>
+                        <input matInput formControlName="carRegis" placeholder="" autocomplete="off"
+                            [errorStateMatcher]="matcher">
+
+                        <mat-error *ngIf="createProductForm.get('carRegis').hasError('required')">
+                            กรุณากรอกทะเบียนรถ
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+            <!--   <div class="col-md-6">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>คนขับรถ</mat-label>
+                        <mat-select formControlName="driverName" (selectionChange)="onChangeDriver($event.value)">
+                            <mat-option *ngFor="let driverGet of driverGet" [value]="driverGet.id">
+                                {{driverGet.driverName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="createProductForm.get('driverName').hasError('required')">
+                            กรุณาเลือกคนขับรถ
+                        </mat-error>
+                    </mat-form-field>
+
+
+
+                </div>--> 
+
+
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-12 text-right">
+
+                    <!--   <mat-select [formControl]="toppingsControl" name="province" multiple>
+
+                            <mat-select-trigger>
+                                <mat-chip-list>
+                                    <mat-chip *ngFor="let topping of toppingsControl.value" [removable]="true"
+                                        (removed)="onToppingRemoved(topping)">
+                                        {{ topping.name }}
+
+                                        <i class="fa fa-times" aria-hidden="true" matChipRemove></i>
+                                    </mat-chip>
+                                </mat-chip-list>
+                            </mat-select-trigger>
+
+                            <mat-option *ngFor="let provinces of provinces" [value]="provinces">
+                                {{provinces.name}}</mat-option>
+
+                        </mat-select>-->
+                    <ng-multiselect-dropdown class="dropdown-province" formControlName="province"
+                        [placeholder]="'จังหวัดที่ปล่อยเช่า'" [settings]="dropdownSettings" [data]="provinces"
+                        [ngClass]="{ 'is-invalid': submitted && f.province.errors }">
+                    </ng-multiselect-dropdown>
+                    <div *ngIf="submitted && f.province.errors" class="invalid-feedback mb-2">
+                        <div *ngIf="f.province.errors.required"> เลือกอย่างน้อย 1 จังหวัด</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="row justify-content-center">
+
+
+                <div class="col-md-7 col-image text-center align-self-center">
+                    <label class="product-lable">รูปภาพเครื่องจักร</label>
+                    <label class="form-group hoverable" for="customFile">
+
+                        <img alt="User Pic" [src]="url ? url : imageToShow" class="img-upload">
+
+                        <div class="hover-text" *ngIf="!url">
+                            <i class="fa fa-upload fa-3x" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="hover-filename " *ngIf="url">
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <span class="filename"> <b>{{imageName}}</b> </span>
+                                </div>
+
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <span class="dropDrag">Drag and drop or click to replace</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--   <label class="hover-remove text-center" *ngIf="url" (click)="delete($event) ">
+                            <div><i class="fa fa-trash fa-2x" aria-hidden="true"></i></div>
+                        </label>-->
+
+                    </label>
+                    <input type="file" id="customFile" accept="image/jpg, image/jpeg" formControlName="image"
+                        (change)="selectFile($event)" [ngClass]="{ 'is-invalid': submitted && f.image.errors }">
+
+                    <div *ngIf="submitted && f.image.errors" class="invalid-feedback mb-2">
+                        <div *ngIf="f.image.errors.required">กรุณาใส่รูปภาพสินค้า</div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary cancel-background" (click)="modalRef.hide()">ยกเลิก</button>
+            <button type="submit" class="btn  black-background">ยืนยัน</button>
+        </div>
+    </form>
+</ng-template>
+
+
+
+<ng-template #template2>
+
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">รายละเอียดสินค้า</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card card-detail" *ngIf="userProductOne">
+                            <img class="card-img-top" src="{{imageUrlS3}}{{userProductOne.imageName}}"
+                                alt="Card image cap">
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-detail">
+                            <div class="card-body ">
+                                <div class="row ">
+                                    <div class="col-12 ">
+                                        <div class="row mb-2" *ngIf="userProductOne">
+
+                                            <div class="col-5">
+                                                <span class="left-text">กลุ่มสินค้า</span>
+                                            </div>
+
+                                            <div class="col-7 text-right">
+                                                <span class="right-text">{{userProductOne.groupName}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+
+                                            <div class="col-5">
+                                                <span class="left-text">ประเภทสินค้า</span>
+                                            </div>
+
+                                            <div class="col-7 text-right">
+                                                <span class="right-text">{{userProductOne.categoryName}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+
+                                            <div class="col-5">
+                                                <span class="left-text">ขนาดสินค้า</span>
+                                            </div>
+
+                                            <div class="col-7 text-right">
+                                                <span class="right-text">{{userProductOne.productName}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-2">
+
+                                            <div class="col-5">
+                                                <span class="left-text">ทะเบียนรถ</span>
+                                            </div>
+
+                                            <div class="col-7 text-right">
+                                                <span class="right-text">{{userProductOne.carRegister}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+
+            </div>
+            <div class="col-md-12">
+              <!--  <div class="row mb-4">
+
+                    <div class="col-md-12">
+                        <div class="card card-detail">
+                            <div class="card-body">
+                                <div class="row">
+
+                                    <div class="col-2 align-self-center text-center">
+                                        <i class="fa fa-user fa-icon" aria-hidden="true"></i>
+                                    </div>
+
+                                    <div class="col-10">
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <span class="left-text">คนขับรถ</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-12">
+                                                <span class="right-text">{{userProductOne.driver.driverName}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>-->
+
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <div class="card card-detail">
+                            <div class="card-body">
+                                <div class="row">
+
+
+
+                                    <div class="col-12">
+                                        <div class="row mb-2">
+
+                                            <div class="col-12">
+                                                <span class="left-text">จังหวัดที่ปล่อยเช่า</span>
+                                            </div>
+                                        </div>
+                                        <div class="horizontal">
+                                            <div class="clip" *ngFor="let provinceProduct of provinceProduct">
+                                                {{provinceProduct.name}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</ng-template>
+
+<ng-template #template3>
+    <form *ngIf="userProductEdit" [formGroup]="editProductForm" (ngSubmit)="onSubmit2(userProductEdit.id)">
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">เพิ่มสินค้า</h4>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef3.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="row ">
+
+                <div class="col-md-4">
+
+                    <mat-form-field class="outline" appearance="outline">
+                        <mat-label>กลุ่มสินค้า</mat-label>
+                        <mat-select formControlName="group" (selectionChange)="onChangeGroup2($event.value)">
+                            <mat-option *ngFor="let group of group" [value]="group.groupId">
+                                {{group.groupName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="editProductForm.get('group').hasError('required')">
+                            กรุณาเลือกกลุ่มสินค้า
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline">
+                        <mat-label>ประเภทสินค้า</mat-label>
+                        <mat-select formControlName="category" (selectionChange)="onChangeCategory2($event.value)">
+                            <mat-option *ngFor="let categoryEdit of categoryEdit" [value]="categoryEdit.categoryId">
+                                {{categoryEdit.categoryName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="editProductForm.get('category').hasError('required')">
+                            กรุณาเลือกประเภทสินค้า
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>ขนาดสินค้า</mat-label>
+                        <mat-select formControlName="productSize" (selectionChange)="onChangeProduct2($event.value)">
+                            <mat-option *ngFor="let productEdit of productEdit" [value]="productEdit.productId">
+                                {{productEdit.productName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="editProductForm.get('productSize').hasError('required')">
+                            กรุณาเลือกขนาดสินค้า
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+            </div>
+            <div class="row ">
+
+
+                <div class="col-md-12">
+
+
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>ทะเบียนรถ</mat-label>
+                        <input matInput formControlName="carRegis" placeholder="" autocomplete="off"
+                            [errorStateMatcher]="matcher">
+
+                        <mat-error *ngIf="editProductForm.get('carRegis').hasError('required')">
+                            กรุณากรอกทะเบียนรถ
+                        </mat-error>
+
+                    </mat-form-field>
+                </div>
+             <!--   <div class="col-md-6">
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>คนขับรถ</mat-label>
+                        <mat-select formControlName="driverName" (selectionChange)="onChangeDriver2($event.value)">
+                            <mat-option *ngFor="let driverGet of driverGet" [value]="driverGet.id">
+                                {{driverGet.driverName}}
+                            </mat-option>
+                        </mat-select>
+
+                        <mat-error *ngIf="editProductForm.get('driverName').hasError('required')">
+                            กรุณาเลือกคนขับรถ
+                        </mat-error>
+                    </mat-form-field>
+
+
+
+                </div>-->
+            </div>
+
+            <div class="row mb-3">
+
+                <div class="col-md-12 text-right ">
+
+                    <ng-multiselect-dropdown class="dropdown-province" formControlName="province"
+                        [placeholder]="'จังหวัดที่ปล่อยเช่า'" [settings]="dropdownSettings" [data]="provinces"
+                        [ngClass]="{ 'is-invalid': submitted && f.province.errors }">
+                    </ng-multiselect-dropdown>
+                    <div *ngIf="submitted && f.province.errors" class="invalid-feedback mb-2">
+                        <div *ngIf="f.province.errors.required"> เลือกอย่างน้อย 1 จังหวัด</div>
+                    </div>
+                </div>
+
+
+                <!--   <mat-form-field appearance="outline">
+                        <mat-label>จังหวัดที่ปล่อยเช่า</mat-label>
+                        <mat-select [formControl]="toppingsControl2" name="province" multiple>
+
+                            <mat-select-trigger>
+                                <mat-chip-list>
+
+                                    <mat-chip *ngFor="let topping of toppingsControl2.value"
+                                        (removed)="onToppingRemoved2(topping)">
+
+                                        {{ topping.name }}
+
+                                        <i class="fa fa-times" aria-hidden="true" matChipRemove></i>
+                                    </mat-chip>
+                                </mat-chip-list>
+                            </mat-select-trigger>
+
+                            <mat-option *ngFor="let provinces of provinces" [value]="provinces">
+                                {{provinces.name}}</mat-option>
+
+                        </mat-select>
+                        <mat-error class="mat-error-info" *ngIf="editProductForm.get('province').hasError('required')">
+                            เลือกอย่างน้อย 1 จังหวัด
+                        </mat-error>
+                    </mat-form-field>-->
+
+
+
+                <!-- <mat-chip-list>
+
+                        <mat-chip *ngFor="let topping of toppingsControl2.value" 
+                            (removed)="onToppingRemoved2(topping)">
+
+                            {{ topping.name }}
+
+                            <i class="fa fa-times" aria-hidden="true" matChipRemove></i>
+                        </mat-chip>
+                    </mat-chip-list>-->
+
+            </div>
+
+            <div class="row justify-content-center">
+
+
+                <div class="col-md-7 col-image text-center align-self-center">
+                    <label class="product-lable">รูปภาพเครื่องจักร</label>
+                    <label class="form-group hoverable" for="customFile2">
+
+                        <img alt="User Pic" [src]="url2 ? url2 : imageToShow" class="img-upload">
+
+                        <div class="hover-text" *ngIf="!url2">
+                            <i class="fa fa-upload fa-3x" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="hover-filename " *ngIf="url2">
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <span class="filename"> <b>{{imageName2}}</b> </span>
+                                </div>
+
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-12 text-center">
+                                    <span class="dropDrag">Drag and drop or click to replace</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- <label class="hover-remove text-center" *ngIf="url2" (click)="delete2($event) ">
+                            <div><i class="fa fa-trash fa-trash-edit fa-2x" aria-hidden="true"></i></div>
+                        </label>-->
+
+                    </label>
+                    <input type="file" id="customFile2" accept="image/jpg, image/jpeg" formControlName="image"
+                        (change)="selectFile2($event)" [ngClass]="{ 'is-invalid': submitted2 && fEdit.image.errors }">
+
+                    <div *ngIf="submitted2 && fEdit.image.errors" class="invalid-feedback mb-2">
+                        <div *ngIf="fEdit.image.errors.required">กรุณาใส่รูปภาพสินค้า</div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary cancel-background" (click)="modalRef3.hide()">ยกเลิก</button>
+            <button type="submit" class="btn  black-background">ยืนยัน</button>
+        </div>
+    </form>
+</ng-template>

@@ -1,0 +1,165 @@
+.image-back {
+    left: 0;
+    width: 100%;
+    height: 250px;
+    position: absolute;
+}
+
+.text-welcome {
+    font-size: 20px;
+}
+
+.black-background {
+    background-color: #FFDE03;
+    border: 1px solid #FFDE03;
+    width: 100%;
+    height: 45px;
+    border-radius: 30px;
+    font-size: 20px;
+    color: black;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.24), 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.black-background:hover {
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.24), 2px 2px 4px 2px rgba(0, 0, 0, 0.19);
+    background-color: #FFDE03;
+}
+
+.img-upload {
+    width: 100%;
+    height: 280px;
+    border-radius: 1%;
+}
+
+.hoverable {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.24);
+}
+
+.hover-text {
+    position: absolute;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+}
+
+.hover-remove {
+    position: absolute;
+    padding: 5px;
+    background-color: red;
+    width: 40px;
+    border-radius: 3px;
+    color: #fff;
+    top: 3%;
+    left: 80%;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+}
+
+.hover-remove:hover {
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.24);
+}
+
+.hoverable:hover .hover-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hoverable:hover .img-upload {
+    opacity: 0.2;
+    transition: all 0.3s;
+}
+
+.hover-filename {
+    position: absolute;
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+}
+
+.dropDrag {
+    color: #444;
+    font-size: 12px;
+}
+
+.filename {
+    font-size: 16px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.hoverable:hover .hover-filename {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hoverable:hover .hover-remove {
+    visibility: visible;
+    opacity: 1;
+}
+
+#customFile {
+    display: none;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-error {
+    text-align: end;
+}
+
+.info-back {
+    background-color: #FFEB3B;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.text-form {
+    font-size: 17px;
+    font-weight: 900;
+    color: #000;
+}
+
+.mat-error-info {
+    font-size: 13px;
+}
+
+.tag-input-text {
+    font-weight: 700;
+}
+
+.span-text {
+    font-size: 13px;
+}
+
+:host ::ng-deep .mat-form-field-outline-start {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline-gap {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .mat-form-field-outline {
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.24);
+}

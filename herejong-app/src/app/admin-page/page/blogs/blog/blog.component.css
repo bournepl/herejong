@@ -1,0 +1,146 @@
+
+.card-title{
+    color: #666;
+}
+
+.text-head{
+    font-size: 25px;
+    color: #666;
+}
+
+
+.card-text{
+    color: #888888;
+}
+
+.card-date{
+    color: #999999;
+    font-size: 13px;
+   
+}
+
+.image-collection{
+    border-top-left-radius: 12px ;
+    border-top-right-radius: 12px ;
+}
+
+.input-group {
+    border-radius: 15px;
+    box-shadow: 2px 4px 8px -6px rgb(135, 135, 135);
+}
+
+.input-search {
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border-right: 0;
+}
+.card-header {
+    padding-bottom: 10px;
+    
+}
+.input-group-text {
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+}
+
+.black-background {
+    font-size: 15px;
+    background-color:rgb(255, 190, 48);
+    border-radius: 15px;
+    color: black;
+    width: 100%;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.25);
+}
+
+.black-background:hover {
+    box-shadow: 2px 7px 10px 0 rgba(0, 0, 0, 0.24), 2px 7px 10px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(255, 190, 48);
+}
+
+.modal-dialog{
+    max-width: 70% !important;
+    width: 70% !important;
+}
+.modal-body{
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+
+.cancel-background{
+    font-size: 15px;
+    border-radius: 20px;
+    width: 180px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.25);
+}
+
+.cancel-background:hover {
+    box-shadow: 2px 7px 10px 0 rgba(174, 174, 174, 0.24), 2px 7px 1rgba(1rgba(155, 155, 155, 0.19) 0.19);
+}
+
+.black-create {
+    font-size: 15px;
+    background-color:rgb(255, 190, 48);
+    border-radius: 20px;
+    color: black;
+    width: 180px;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.25);
+}
+
+.black-create:hover {
+    box-shadow: 2px 7px 10px 0 rgba(174, 174, 174, 0.24), 2px 7px 7px 2px rgba(155, 155, 155, 0.19) ;
+    background-color: rgb(255, 190, 48);
+}
+
+
+.img-upload {
+    width: 100%;
+    height: 300px;
+    border-radius: 1%;
+    object-fit: cover;
+}
+
+.fa-calendar-o{
+    color: rgb(255, 190, 48);
+}
+
+.text-eye{
+    color: violet;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.text-pencil{
+    color: green;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.text-trash{
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+.text-eye:hover {
+    transform: translatey(-5px);
+    transition: transform 200ms ease;
+}
+.text-pencil:hover {
+    transform: translatey(-5px);
+    transition: transform 200ms ease;
+}
+.text-trash:hover{
+    transform: translatey(-5px);
+    transition: transform 200ms ease;
+}

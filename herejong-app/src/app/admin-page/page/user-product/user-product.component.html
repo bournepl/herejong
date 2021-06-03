@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-admin">
+            <div class="card-header">
+                <div class="row align-items-center">
+
+                    <div class="col-md-8 mb-2">
+                        <h5 class="card-title"> Supplier List</h5>
+                    </div>
+                    <div class="col-md-4">
+                        <form>
+                            <div class="input-group no-border">
+                                <input type="text" value="" class="form-control input-search" placeholder="Search">
+                                <div class="input-group-append ">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-body">
+
+                <div class="example-container mat-elevation-z0">
+                    <div class="example-table-container">
+                        <table mat-table [dataSource]="dataSource" matSort>
+
+                            <!-- Position Column -->
+                            <ng-container matColumnDef="position">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>NO.</b> </th>
+                                <td mat-cell *matCellDef="let element; let i = index;"> <span class="mobile-label"> 
+
+                                </span>{{paginator.pageIndex == 0 ? i + 1 : 1 + i + paginator.pageIndex * paginator.pageSize}} </td>
+                            </ng-container>
+
+                            <!-- Name Column -->
+                            <ng-container matColumnDef="companyId">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ID</b> </th>
+                                <td mat-cell *matCellDef="let element"> <span class="mobile-label"></span>{{element.companyId}} </td>
+                            </ng-container>
+
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="companyName">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>COMPANY NAME</b> </th>
+                                <td mat-cell *matCellDef="let element" class='m-card-title'> <span class="mobile-label"></span>{{element.companyProfile.nameCompany}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="email">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>EMAIL</b> </th>
+                                <td mat-cell *matCellDef="let element"> <span class="mobile-label"></span>{{element.email}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="phone">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>PHONE</b> </th>
+                                <td mat-cell *matCellDef="let element"> <span class="mobile-label"></span>{{element.companyProfile.phone}} </td>
+                            </ng-container>
+
+                            <!-- Symbol Column -->
+                            <ng-container matColumnDef="province">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>PROVINCE</b> </th>
+                                <td mat-cell *matCellDef="let element"> <span class="mobile-label"></span>{{element.companyProfile.provinceCompany}} </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/admin/product/create', row.userId]"></tr>
+                        </table>
+                    </div>
+                    <mat-paginator [pageSizeOptions]="[10, 20,50]" showFirstLastButtons></mat-paginator>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,55 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-clip-rotate" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="container">
+
+
+    <div class="row mb-2">
+        <div class="col">
+            <span class="driver-text">คนขับรถ</span>
+        </div>
+
+    </div>
+
+    <div class="row mb-3" *ngFor="let driver of driver">
+        <div class="col" >
+            <div class="card" (click)="onDriverProfile(driver.id)">
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-3">
+                            <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="col-9">
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="fullname">{{driver.driverName}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <span class="numberphone">{{driver.driverCert}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</div>
+
+<div class="plus" (click)="onCreateDriver()">
+    <div class="row ">
+        <div class="col ">
+            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+        </div>
+
+    </div>
+</div>
